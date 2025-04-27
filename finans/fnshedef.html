@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+  
+
+    <link rel="stylesheet" href="css/style.css">
+     <!--Font-->
+     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <!-- Metaeryal icon-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+     
+     
+
+     
+     
+</head>
+<body>
+    <div class="grid-container">
+
+   <!--Header-->
+    <header class="header">
+    <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-symbols-outlined">menu</span>
+    </div><span ></span>
+    <div class="header-left">
+    <div class="header-right">
+        <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
+        
+        <span class="material-symbols-outlined">person</span>
+
+
+        
+    </div>
+</header>
+   <!--End Header-->
+   <div class="notification-box" id="notificationBox">
+    <h4>Bildirimler</h4>
+    <ul>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+    </ul>
+</div>
+
+   <!--Sidebar-->
+   <aside id="sidebar">
+   <div class="sidebar-title">
+      <div class="sidebar-brand">
+        <span class="material-symbols-outlined">finance</span>
+         <span>Kişisel Finans</span>
+      </div>
+      <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
+   </div>
+   <ul class="sidebar-list">
+    <li class="sidebar-list-item">
+        <a href="Index.html">
+       <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
+    </a>
+    
+    </li>
+    <li class="sidebar-list-item">
+        <a href="islemler.html">
+      <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="budget.html">
+        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="debt.html">
+        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="abone.html">
+        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="fnshedef.html">
+        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <span class="material-symbols-outlined">robot_2</span>AI
+    </li>
+
+     
+    <li class="sidebar-list-item   cizgi">
+        <a href="settings.html">
+        <span class="material-symbols-outlined">settings</span>Ayarlar
+    </a>
+    </li>
+
+    <li class="sidebar-list-item">
+        <a href="Login.html">
+            <span class="material-symbols-outlined">logout</span>Çıkış
+    </a>
+    </li>
+    
+   </ul>
+</aside>
+   <!--End Sidebar-->
+
+   <!--Main-->
+    <main class="main-container">
+        <div class="main-title">
+            <p class="font-weight-bold"></p>
+        </div>
+      
+        <div class="transaction">
+            <h2 class="table-box">Finansal Hedeflerim </h2>
+
+            <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>Hedef ekle</button>
+            <!--start açılıp kapanan form-->
+
+            <div class="modal">
+                
+                
+                <form>
+                     <h3 id="modal-kapat">x</h3>
+
+                     <label> Kullanıcı </label>
+                     <input type="text" value="Kullanıcı" readonly>
+
+                     <label >Kategori</label>
+                     <select>
+                         <option value="Market" selected>Tatil</option>
+                         <option value="Maaş" >Eğitim</option>
+                         <option value="Freelance" selected>Teknoloji</option>
+                         <option value="Borç" >Sağlık</option>
+                         <option value="yatirim">Yatırım</option>
+                         <option value="ev">Ev</option>
+                         <option value="Araç">Araç</option>
+                         <option value="Hobi">Hobi</option>
+                         <option value="Güzellik">Güzellik</option>
+                         <option value="Evcil">Evcil Hayvan</option>
+                         <option value="Bebek&Aile">Bebek & Aile</option>
+                         
+                     </select>
+
+                     <label> Hedef Adı</label>
+                     <input type="text">
+
+                    <label >Hedef Tutarı</label>
+            
+                    <input type="number" value="301.8">
+                    
+                    <label>Mevcut Durum</label>
+                    <input type="number" value="301.8" required>
+                
+
+                    <label >Tamamlanma Tarihi</label>
+                    <input type="date" value="2024-11-25">
+
+                    
+                    
+                   
+
+                    <button  class="form-btn">kaydet</button>
+                </form>
+            </div>
+            
+         <!--end açılıp kapanan form-->
+            <table>
+    
+                  <thead>
+                    <tr>
+                        <th>Hedef No</th>
+                        <th>Kullanıcı</th>
+                        <th>Kategori</th>
+                        <th>Hedef Adı</th>
+                        <th>Hedef Tutarı</th>
+                        <th>Mevcut Durum</th>
+                        <th>Tamamlanma Tarihi</th>
+                        <th>İşlemler</th>
+                    
+                    </tr>
+    
+                  </thead>
+    
+                  <tbody>
+                      <tr>
+                           <td>1</td>
+                           <td>Admin</td>
+                           <td>Tatil</td>
+                           <td>Yaz Tatili İçin Birikim</td>
+                           <td>30.000</td>
+                           <td>7.500</td>
+                           <td>2025-07-01</td>
+                           <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
+                            published_with_changes
+                            </span> </td>
+                   
+                      </tr>
+    
+                      <tr>
+                        <td>2</td>
+                           <td>Admin</td>
+                           <td>Eğitim</td>
+                           <td>İngilizce Kursu</td>
+                           <td>11.000</td>
+                           <td>7.500</td>
+                           <td>2025-05-15</td>
+                           <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
+                            published_with_changes
+                            </span> </td>
+                   </tr>
+    
+                   <tr>
+                    <td>3</td>
+                           <td>Admin</td>
+                           <td>Teknoloji</td>
+                           <td>Yeni Laptop Alımı</td>
+                           <td>25.000</td>
+                           <td>10.500</td>
+                           <td>2025-06-30</td>
+                           <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
+                            published_with_changes
+                            </span> </td>
+                   
+               </tr>
+    
+               <tr>
+                           <td>4</td>
+                           <td>Admin</td>
+                           <td>Sağlık</td>
+                           <td>Diş Tedavisi</td>
+                           <td>12.000</td>
+                           <td>12.500</td>
+                           <td>2025-03-10</td>
+                           <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
+                            published_with_changes
+                            </span> </td>
+                   
+           </tr>
+    
+           <tr>
+                           <td>5</td>
+                           <td>Admin</td>
+                           <td>Yatırım</td>
+                           <td>Borsa Yatırımı için Sermaye</td>
+                           <td>50.000</td>
+                           <td>18.000</td>
+                           <td>2025-12-31</td>
+                           <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
+                            published_with_changes
+                            </span> </td>
+                   
+       </tr>
+    
+                  </tbody>
+            </table>
+                   
+        </div>
+    
+    
+
+
+    </main>
+   <!--End Main-->
+
+
+
+
+    </div>
+
+    <!-- sCRİPTS-->
+    <!-- APEXCHARTS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
+    <!-- CUSTOM CS-->
+    <!--chartjs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

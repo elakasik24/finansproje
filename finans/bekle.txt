@@ -1,0 +1,323 @@
+var barCharOptions = {
+    series: [50,50],
+    chart: {
+    type: 'donut',
+    toolbar: {
+        show: false
+    },
+  },
+  labels: ["Gelir", "Gider"],
+  colors: ['#A3E635', '#D1D5DB']
+  ,
+  plotOptions: {
+    pie: {
+      distributed: true,
+      startAngle: -90,
+      endAngle: 90,
+      offsetY: 10,
+      columnWidth:'%40',
+    }
+  },
+  dataLabels: {
+    enabled: true,
+    formatter: function (val,opts){
+        return opts.w.config.labels[opts.seriesIndex];
+    }
+  },
+  legend:{
+     show: false
+  },
+
+  grid: {
+    padding: {
+      bottom: -100
+    }
+  },
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      chart: {
+        width: 200
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }]
+  };
+
+  var barChart = new ApexCharts(document.querySelector("#bar-chart"), barCharOptions);
+  barChart.render();
+
+
+  // Gelir dağılımı pie chart
+
+  var areaChartOptions = {
+    series: [44, 55, 41, 17, 15],
+    chart: {
+    width: 380,
+    type: 'donut',
+  },
+  labels: ["Maaş", "Freelance","Kira Geliri","Şans Oyunları","Satış"],
+  colors: ['#A3E635', '#D1D5DB']
+  ,
+  plotOptions: {
+    pie: {
+      startAngle: -90,
+      endAngle: 270
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  fill: {
+    type: 'gradient',
+  },
+  legend: {
+    formatter: function(val, opts) {
+      return val + " - " + opts.w.globals.series[opts.seriesIndex]
+    }
+  },
+  title: {
+  
+  },
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      chart: {
+        width: 200
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }]
+  };
+
+  var areaChart = new ApexCharts(document.querySelector("#area-chart"), areaChartOptions);
+  areaChart.render();
+
+
+  //Gider Dağılımı pie cahrt
+
+  var twoChartOptions = {
+    series: [44, 55, 41, 17, 15],
+    chart: {
+    width: 380,
+    type: 'donut',
+  },
+  labels: ["Maaş", "Freelance","Kira Geliri","Şans Oyunları","Satış"],
+  colors: ['#A3E635', '#D1D5DB']
+  ,
+  plotOptions: {
+    pie: {
+      startAngle: -90,
+      endAngle: 270
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  fill: {
+    type: 'gradient',
+  },
+  legend: {
+    formatter: function(val, opts) {
+      return val + " - " + opts.w.globals.series[opts.seriesIndex]
+    }
+  },
+  title: {
+  
+  },
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      chart: {
+        width: 200
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }]
+  };
+
+  var twoChart = new ApexCharts(document.querySelector("#two-chart"), twoChartOptions);
+  twoChart.render();
+
+
+
+  .charts{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 5px; 
+    margin-top: 5px;
+    width: 100%; 
+    padding: 0 10px; 
+    box-sizing: border-box;
+    
+
+  }
+  .charts-card {
+    width: 100% ; 
+    max-width: 100% ; 
+    height: auto; 
+    padding: 15px; 
+    font-size: 10px;
+    word-wrap: break-word; 
+    box-sizing: border-box; 
+    
+  }
+  #sidebar{
+    
+    z-index: 10;
+  }
+
+  main .recent-orders{
+    width: 200% ; 
+    max-width: 400% ; 
+    height: auto; 
+    padding: 15px; 
+    font-size: 15px;
+    word-wrap: break-word; 
+    box-sizing: border-box; 
+
+  }
+
+
+
+  .box{
+   border: 2px solid white;
+   padding: 10px 20px;
+   display: inline-block;
+   background-color: #fdfdfd;
+   border-radius: 25px;
+   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+
+}
+
+
+main .recent-orders{
+   margin-top: 2rem;
+}
+
+main .recent-orders h2{
+  margin-bottom: 0.8rem;
+}
+
+main .recent-orders table{
+  background: white;
+  width: 50%;
+  border-radius: 25px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+  transition: all 300ms case;
+}
+
+main .recent-orders table:hover{
+  box-shadow: none;
+
+}
+
+main table tbody td {
+   height: 2.8rem;
+   border-bottom: 1px solid lightblue ;
+   color: darkcyan;
+
+}
+
+main table tbody tr:last-child td{
+  border: none;
+}
+
+main .recent-orders a{
+  
+  text-align: left;
+  display: block;
+  margin:  9px;
+  
+  color: rgb(114, 70, 210);
+  text-decoration: none;
+
+
+}
+
+main .recent-orders button{
+  background-color: rgb(234, 237, 240);
+  margin: 1%;
+  border-radius: 20px;
+  width: 95px;
+  height: 35px;
+  box-shadow: 0 4px 15px rgba(232, 233, 235, 0.3); 
+}
+ 
+
+
+
+
+
+
+
+  <div class="modal">
+                
+                    <span class="close-btn">x</span>
+                    <form >
+                        <label >isim</label>
+                        <input type="text" placeholder="örnekad">
+                        <label >eposta</label>
+                        <input type="email" placeholder="ornek@email">
+
+                        <button  class="form-btn">kaydet</button>
+                    </form>
+                </div>
+
+
+
+                .modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+ 
+ }
+ 
+ .modal form {
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ .close-btn{
+   position: absolute;
+   top: 10px;
+   right: 15px;
+   font-size: 24px;
+   cursor: pointer;
+ }
+ input{
+   width: 100%;
+   padding: 8px;
+   margin-top: 5px;
+   margin-bottom: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+ 
+
+ const modalBtn =document.getElementById("open-btn");
+const modal = document.querySelector(".modal");
+const modalKapat = document.getElementById(".close-btn");
+
+modalBtn.addEventListener("click", () =>{
+  modal.style.display = "flex";
+
+});
+
+modalKapat.addEventListener("click" , () => {
+  modal.style.display = "none";
+});

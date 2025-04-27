@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+  
+
+    <link rel="stylesheet" href="css/style.css">
+     <!--Font-->
+     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <!-- Metaeryal icon-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+     
+    
+
+     
+     
+</head>
+<body>
+    <div class="grid-container">
+
+   <!--Header-->
+    <header class="header">
+    <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-symbols-outlined">menu</span>
+    </div><span ></span>
+    <div class="header-left">
+    <div class="header-right">
+        <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
+        
+        <span class="material-symbols-outlined">person</span>
+    </div>
+</header>
+   <!--End Header-->
+   <div class="notification-box" id="notificationBox">
+    <h4>Bildirimler</h4>
+    <ul>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+    </ul>
+</div>
+
+   <!--Sidebar-->
+   <aside id="sidebar">
+   <div class="sidebar-title">
+      <div class="sidebar-brand">
+        <span class="material-symbols-outlined">finance</span>
+         <span>Kişisel Finans</span>
+      </div>
+      <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
+   </div>
+   <ul class="sidebar-list">
+    <li class="sidebar-list-item">
+        <a href="Index.html">
+       <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
+    </a>
+    
+    </li>
+    <li class="sidebar-list-item">
+        <a href="islemler.html">
+      <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="budget.html">
+        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="debt.html">
+        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="abone.html">
+        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="fnshedef.html">
+        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <span class="material-symbols-outlined">robot_2</span>AI
+    </li>
+
+     
+    <li class="sidebar-list-item   cizgi">
+        <a href="settings.html">
+        <span class="material-symbols-outlined">settings</span>Ayarlar
+    </a>
+    </li>
+   
+    <li class="sidebar-list-item">
+        <a href="Login.html">
+            <span class="material-symbols-outlined">logout</span>Çıkış
+    </a>
+    </li>
+
+
+   </ul>
+</aside>
+   <!--End Sidebar-->
+
+   <!--Main-->
+  
+<div class="setting-container">
+        <form class="account">
+            <div class="account-header">
+                <h2 class="account-title">Hesap Ayarları</h2>
+                <div class="btn-container">
+                    <button class="btn-cancel">Kaydet</button>
+                </div>
+            </div>
+
+
+         <div class="account-edit">
+            <div class="input-container">
+                <label>Kullanıcı Adı</label>
+                <input type="text" placeholder="Kullanıcı Adı">
+            </div>
+         </div>
+
+         <div class="account-edit">
+            <div class="input-container">
+                <label>Email</label>
+                <input type="email" placeholder="Email">
+            </div>
+         </div>
+
+         <div class="account-edit">
+            <div class="input-container">
+                <label>Şifre</label>
+                <input type="password" placeholder="Şifre">
+            </div>
+         </div>
+
+        </form>
+    
+    
+
+
+  
+
+
+
+    </div>
+    </div>
+
+    <!-- sCRİPTS-->
+    <!-- APEXCHARTS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
+    <!-- CUSTOM CS-->
+    <!--chartjs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
