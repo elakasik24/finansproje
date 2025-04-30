@@ -25,9 +25,10 @@
     </div><span ></span>
     <div class="header-left">
     <div class="header-right">
-        <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
+        <button class="notper-button">
+            <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
+        </button>
         
-        <span class="material-symbols-outlined">person</span>
     </div>
 </header>
    <!--End Header-->
@@ -46,7 +47,7 @@
    <div class="sidebar-title">
       <div class="sidebar-brand">
         <span class="material-symbols-outlined">finance</span>
-         <span>Kişisel Finans</span>
+         <span>CepFinans</span>
       </div>
       <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
    </div>
@@ -78,12 +79,14 @@
     </a>
     </li>
     <li class="sidebar-list-item">
-         <a href="fnshedef.html"></a>
+        <a href="fnshedef.html">
         <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
+    </a>
     </li>
     <li class="sidebar-list-item">
-         <a href="ai.html"></a>
+        <a href="ai.html">
         <span class="material-symbols-outlined">robot_2</span>AI
+    </a>
     </li>
 
      
@@ -109,7 +112,7 @@
         </div>
       
         <div class="transaction">
-            <h2 class="table-box">GELİR & GİDER İŞLEMLERİ </h2>
+            <h2 class="table-box">GELİR İŞLEMLERİ </h2>
 
             <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>İŞLEM EKLE</button>
             <!--start açılıp kapanan form-->
@@ -130,10 +133,7 @@
                     <input type="text" value="Gross Market">
                     
                     <label>İşlem Türü</label>
-                    <select>
-                        <option value="Gider" selected>Gider</option>
-                        <option value="Gelir" >Gelir</option>
-                    </select>
+                    <input type="text" value="Gelir" id="income-tür" class="income-tür" readonly>
 
                     <label >Kategori</label>
                     <select>
@@ -180,9 +180,13 @@
                            <td>Market Alışverişi</td>
                            <td>Lorem ipsum </td>
                            <td class="warning">1200</td>
-                           <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
-                            published_with_changes
-                            </span></td>
+                           <td> <button class="delete-btn"> <span class="material-symbols-outlined">delete</span>
+                              </button>
+                            <button class="edit-btn">
+                                <span class="material-symbols-outlined">
+                                    published_with_changes
+                                    </span>
+                            </button> </td>
                    
                       </tr>
     
@@ -192,9 +196,15 @@
                         <td>Maaş</td>
                         <td>Lorem ipsum </td>
                         <td class="warning">30000</td>
-                        <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
-                            published_with_changes
-                            </span> </td>
+                        <td>
+                            <button class="delete-btn"> 
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                           <button class="edit-btn">
+                                 <span class="material-symbols-outlined">published_with_changes</span>
+                          </button>
+                    
+                    </td>
                    
                    </tr>
     
@@ -204,9 +214,13 @@
                     <td>Freelance</td>
                     <td>Lorem ipsum </td>
                     <td class="warning">12000</td>
-                    <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
-                        published_with_changes
-                        </span> </td>
+                    <td> <button class="delete-btn"> 
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                   <button class="edit-btn">
+                         <span class="material-symbols-outlined">published_with_changes</span>
+                  </button>
+                 </td>
                    
                </tr>
     
@@ -216,9 +230,14 @@
                 <td>Borç</td>
                 <td>Lorem ipsum </td>
                 <td class="warning">200</td>
-                <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
-                    published_with_changes
-                    </span></td>
+                <td>
+                    <button class="delete-btn"> 
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                   <button class="edit-btn">
+                         <span class="material-symbols-outlined">published_with_changes</span>
+                  </button>
+                </td>
                    
            </tr>
     
@@ -228,19 +247,196 @@
             <td>Kişisel Bakım</td>
             <td>Lorem ipsum </td>
             <td class="warning">1000</td>
-            <td><span class="material-symbols-outlined">delete</span> <span class="material-symbols-outlined">
-                published_with_changes
-                </span> </td>
+            <td>
+                <button class="delete-btn"> 
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+               <button class="edit-btn">
+                     <span class="material-symbols-outlined">published_with_changes</span>
+              </button>
+             </td>
                    
        </tr>
+
+       <tr>
+        <td>04.06.2025</td>
+        <td>Gider</td>
+        <td>Kişisel Bakım</td>
+        <td>Lorem ipsum </td>
+        <td class="warning">1000</td>
+        <td>
+            <button class="delete-btn"> 
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+           <button class="edit-btn">
+                 <span class="material-symbols-outlined">published_with_changes</span>
+          </button>
+         </td>
+               
+   </tr>
     
                   </tbody>
             </table>
                    
         </div>
     
-    
+    <!--Silinebilir bozulursa-->
+    <div class="main-title">
+        <p class="font-weight-bold"></p>
+    </div>
+  
+    <div class="transaction">
+        <h2 class="table-box">GİDER İŞLEMLERİ </h2>
 
+        <button id="open-btnn" class="open-btnn"><span class="material-symbols-outlined">add_circle</span>İŞLEM EKLE</button>
+        <!--start açılıp kapanan form-->
+
+        <div class="modall">
+            
+            
+            <form>
+                 <h3 id="modal-kapatt">x</h3>
+
+                 <label> Tutar </label>
+                 <input type="number" value="301.8">
+
+                <label >Tarih</label>
+                <input type="date" value="2024-11-25">
+
+                <label >Açıklama</label>
+                <input type="text" value="Gross Market">
+                
+                <label>İşlem Türü</label>
+                <input type="text" value="Gider" id="in-tür" class="in-tür" readonly>
+
+                <label >Kategori</label>
+                <select>
+                    <option value="Market" selected>Market</option>
+                    <option value="Maaş" >Ulaşım</option>
+                    <option value="Freelance" selected>Eğlence</option>
+                    <option value="Borç" >Kira</option>
+                    <option value="sağlık">Sağlık</option>
+                    <option value="Restoran">Restoran & Kafe</option>
+                    <option value="Kişisel Bakım">Kişisel Bakım</option>
+                    <option value="Hobi">Hobi</option>
+                    <option value="Teknoloji">Teknoloji</option>
+                    <option value="Eğitim">Eğitim</option>
+                    <option value="Ev&Yaşam">Ev & Yaşam</option>
+                    <option value="Aile&Sosal">Aile&Sosyal Hayat</option>
+                    <option value="Borç">Borç</option>
+                </select>
+               
+
+                <button  class="form-btn">kaydet</button>
+            </form>
+        </div>
+        
+     <!--end açılıp kapanan form-->
+        <table>
+
+              <thead>
+                <tr>
+                    <th>Tarih</th>
+                    <th>İşlem Türü</th>
+                    <th>Kategori</th>
+                    <th>Açıklama</th>
+                    <th>Tutar</th>
+                    <th>İşlemler</th>
+                
+                </tr>
+
+              </thead>
+
+              <tbody>
+                  <tr>
+                       <td>12.09.2025</td>
+                       <td>Gider</td>
+                       <td>Market Alışverişi</td>
+                       <td>Lorem ipsum </td>
+                       <td class="warning">1200</td>
+                       <td> <button class="delete-btn"> 
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                   <button class="edit-btn">
+                         <span class="material-symbols-outlined">published_with_changes</span>
+                  </button>
+                </td>
+               
+                  </tr>
+
+                  <tr>
+                    <td>11.08.2025</td>
+                    <td>Gelir</td>
+                    <td>Maaş</td>
+                    <td>Lorem ipsum </td>
+                    <td class="warning">30000</td>
+                    <td>
+                        <button class="delete-btn"> 
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                       <button class="edit-btn">
+                             <span class="material-symbols-outlined">published_with_changes</span>
+                      </button>
+                     </td>
+               
+               </tr>
+
+               <tr>
+                <td>09.08.2025</td>
+                <td>Gelir</td>
+                <td>Freelance</td>
+                <td>Lorem ipsum </td>
+                <td class="warning">12000</td>
+                <td>
+                    <button class="delete-btn"> 
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                   <button class="edit-btn">
+                         <span class="material-symbols-outlined">published_with_changes</span>
+                  </button>
+                 </td>
+               
+           </tr>
+
+           <tr>
+            <td>07.08.2025</td>
+            <td>Gider</td>
+            <td>Borç</td>
+            <td>Lorem ipsum </td>
+            <td class="warning">200</td>
+            <td>
+                <button class="delete-btn"> 
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+               <button class="edit-btn">
+                     <span class="material-symbols-outlined">published_with_changes</span>
+              </button>
+            </td>
+               
+       </tr>
+
+       <tr>
+        <td>04.06.2025</td>
+        <td>Gider</td>
+        <td>Kişisel Bakım</td>
+        <td>Lorem ipsum </td>
+        <td class="warning">1000</td>
+        <td>
+            <button class="delete-btn"> 
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+           <button class="edit-btn">
+                 <span class="material-symbols-outlined">published_with_changes</span>
+          </button>
+         </td>
+               
+   </tr>
+
+              </tbody>
+        </table>
+               
+    </div>
+    <!--silinen end-->
 
     </main>
    <!--End Main-->
