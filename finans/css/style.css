@@ -65,6 +65,12 @@ body {
 
 
 }
+.notper-button{
+  border-radius: 10px;
+  border: none;
+  color: #ffffff ;
+  background-color: #242f49;
+}
 
 /* --------------SIDEBAR-------------- */
 #sidebar {
@@ -646,6 +652,24 @@ main table tbody tr:last-child td{
  border: none;
 }
 
+.edit-btn , .delete-btn{
+
+  border-radius: 10px;
+  border:none;
+  color: #3d658e;
+  background-color: #fcf1f1;
+  
+
+}
+.delete-btn:hover{
+  color: #e74c3c;
+}
+
+.edit-btn:hover{
+  color: #21aa58;
+}
+
+
 
 /*açılır prncere*/
 .modal{
@@ -746,6 +770,141 @@ main table tbody tr:last-child td{
  }
 
 .modal form  select{
+  margin: 0.5rem 0 ;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+
+  
+}
+
+
+/* silinebilir modal */
+
+.open-btnn{
+  background-color: #367cf6;
+  color: #0f2a5a;
+  padding: 10px 13px;
+  border: none;
+  font-size: 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: #367cf6 0.3s ease ;
+  margin: 14px;
+  margin-left: 1px;
+  display: block;
+ }
+ 
+ .open-btnn:hover{
+ 
+   background-color: #5e6e8a;
+ 
+ }
+ .open-btnn > span{
+   font-size: 18px;
+   margin-right: 6px;
+   vertical-align: middle;
+ }
+ 
+
+
+.modall{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  
+ 
+ }
+ 
+ .modall form {
+  position: relative;
+  min-width: 30%;
+  width: 30%;
+   display: flex;
+   flex-direction: column;
+   padding: 2rem;
+   background: white;
+   border-radius: 1.5rem;
+   font-size: 1.3rem
+ }
+
+ #modal-kapatt{
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgb(97, 90, 90);
+  padding: 0.5rem;
+ 
+  cursor: pointer;
+  z-index: 10; 
+ }
+ #modal-kapatt:hover{
+  background-color: #db0a0a;
+ }
+
+ .modall form input{
+  margin: 0.5rem 0 ;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
+ 
+
+ }
+
+ .modall form select{
+  margin: 0.5rem 0 ;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  border-radius: 12px;
+  border-color: black;
+  
+  
+ }
+
+
+
+
+ .form-btn{
+  width: 50%;
+  height: 60%;
+  background-color: #3c65cc;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: #367cf6 0.3s ease ;
+  margin: 14px;
+  margin-left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ .form-btn:hover{
+  background-color: #5eb6fd;
+
+ }
+
+ .modall form input{
+  margin: 0.5rem 0 ;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+
+ }
+
+ .modall form label{
+  display: block;
+  margin-top: 10px;
+ }
+
+.modall form  select{
   margin: 0.5rem 0 ;
   padding: 0.5rem;
   font-size: 1.2rem;
@@ -869,6 +1028,7 @@ form{
 .forgot-link{
 
   margin: -15px 0 15px;
+  padding: 25px;
 
 
 }
@@ -1125,6 +1285,131 @@ form{
 
 
 
+/*şifremi unuttum kısmı*/
+
+
+.row{
+  background-color: #7494ec;
+  color: #2e3b63;
+  text-align: center;
+  padding: 2em 2em 0.5em;
+  width: 30%;
+  margin: 2em auto;
+  border-radius: 50px;
+  margin-top: 6em;
+}
+
+.row h1{
+  font-size: 1.5rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.row .form-group{
+ 
+   margin: 0.5rem 0;
+}
+
+.row .form-group label{
+  display:block;
+  color: #fffefe;
+  text-align: left;
+  font-weight: 400;
+}
 
 
 
+.row .form-group input , .row .form-group button {
+  display: block;
+  padding: 0.5em 0;
+  width: 100%;
+  margin-top:1em;
+  margin-bottom: 0.5em;
+  background-color: inherit;
+  border: none ;
+  border-bottom: 1px solid #fffdfd;
+  color: #ffffff;
+
+
+}
+.row .form-group input{
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 4em;
+  padding-top: 1.5em;
+}
+
+
+
+
+
+.row .form-group input:focus , .row .form-group button:focus {
+
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 1em 0.5em;
+  animation: pulse 1s infinite ease;
+
+
+}
+
+.row .form-group a {
+  text-decoration: none;
+
+}
+.row .form-group button {
+  border: 1px;
+  border-radius: 15px;
+  outline: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: #09234f;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 3.5em;
+  padding: 1em;
+  
+}
+
+.row .form-group button:hover , .row .form-group button:focus {
+  background-color: #fff;
+}
+
+.row .form-group button.is-loading::after{
+  animation: spinner 500ms infinite linear;
+  content: '';
+  position: absolute;
+  margin-left: 2em;
+  border: 2px solid #000;
+  border-radius: 100%;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  height: 1em;
+  width: 4%;
+}
+
+.row .footer h5{
+  margin-top: 1em;
+}
+
+.row .footer p{
+  margin-top: 2em;
+}
+
+.row .footer p .symbols{
+  color: #0c3764;
+}
+
+.row .footer a{
+  color: inherit;
+  text-decoration: none;
+}
+.information-text{
+  color: #fff;
+}
+
+.row  h2{
+  color: #092f72;
+}
+
+/*logo*/
