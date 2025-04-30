@@ -322,6 +322,22 @@ modalKapat.addEventListener("click" , () => {
 
 
 
+///silinebilir modal
+const modalBtnn =document.getElementById("open-btnn");
+const modall = document.querySelector(".modall");
+const modalKapatt = document.getElementById("modal-kapatt");
+
+modalBtnn.addEventListener("click", () =>{
+  modall.style.display = "flex";
+
+});
+
+modalKapatt.addEventListener("click" , () => {
+  modall.style.display = "none";
+});
+
+
+
 // Genişlik ve yazı boyutunu sabitle
 
 
@@ -345,6 +361,11 @@ window.addEventListener("click", function (e) {
 
 
 ////bildirim kutusu end
+
+
+
+
+
 
 
 
