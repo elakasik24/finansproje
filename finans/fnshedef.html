@@ -4,40 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    
-  
-
     <link rel="stylesheet" href="css/style.css">
-     <!--Font-->
      <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-     
-
-     
-     
 </head>
 <body>
     <div class="grid-container">
-
-   <!--Header-->
     <header class="header">
     <div class="menu-icon" onclick="openSidebar()">
         <span class="material-symbols-outlined">menu</span>
     </div><span ></span>
     <div class="header-left">
-    <div class="header-right">
-        <button class="notper-button">
-            <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
-        </button>
-        
-
-
-        
-    </div>
 </header>
-   <!--End Header-->
    <div class="notification-box" id="notificationBox">
     <h4>Bildirimler</h4>
     <ul>
@@ -47,8 +25,6 @@
         <li>Lorem ipsum istinctio magni</li>
     </ul>
 </div>
-
-   <!--Sidebar-->
    <aside id="sidebar">
    <div class="sidebar-title">
       <div class="sidebar-brand">
@@ -64,11 +40,8 @@
     </a>
     
     </li>
-    <li class="sidebar-list-item">
-        <a href="islemler.html">
-      <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
-    </a>
-    </li>
+    <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+    <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
     <li class="sidebar-list-item">
         <a href="budget.html">
         <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
@@ -93,26 +66,19 @@
         <a href="ai.html">
         <span class="material-symbols-outlined">robot_2</span>AI
     </a>
-    </li>
-
-     
+    </li>   
     <li class="sidebar-list-item   cizgi">
         <a href="settings.html">
         <span class="material-symbols-outlined">settings</span>Ayarlar
     </a>
     </li>
-
     <li class="sidebar-list-item">
         <a href="Login.html">
             <span class="material-symbols-outlined">logout</span>Çıkış
     </a>
-    </li>
-    
+    </li>   
    </ul>
 </aside>
-   <!--End Sidebar-->
-
-   <!--Main-->
     <main class="main-container">
         <div class="main-title">
             <p class="font-weight-bold"></p>
@@ -135,10 +101,10 @@
 
                      <label >Kategori</label>
                      <select>
-                         <option value="Market" selected>Tatil</option>
-                         <option value="Maaş" >Eğitim</option>
-                         <option value="Freelance" selected>Teknoloji</option>
-                         <option value="Borç" >Sağlık</option>
+                         <option value="Talil" selected>Tatil</option>
+                         <option value="Eğitim" >Eğitim</option>
+                         <option value="Teknoloji" selected>Teknoloji</option>
+                         <option value="Sağlık" >Sağlık</option>
                          <option value="yatirim">Yatırım</option>
                          <option value="ev">Ev</option>
                          <option value="Araç">Araç</option>
@@ -170,10 +136,7 @@
                     <button  class="form-btn">kaydet</button>
                 </form>
             </div>
-            
-         <!--end açılıp kapanan form-->
-            <table>
-    
+            <table>  
                   <thead>
                     <tr>
                         <th>Hedef No</th>
@@ -183,125 +146,205 @@
                         <th>Hedef Tutarı</th>
                         <th>Mevcut Durum</th>
                         <th>Tamamlanma Tarihi</th>
-                        <th>İşlemler</th>
-                    
+                        <th>İşlemler</th>                  
                     </tr>
-    
                   </thead>
-    
-                  <tbody>
-                      <tr>
-                           <td>1</td>
-                           <td>Admin</td>
-                           <td>Tatil</td>
-                           <td>Yaz Tatili İçin Birikim</td>
-                           <td>30.000</td>
-                           <td>7.500</td>
-                           <td>2025-07-01</td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   
-                      </tr>
-    
-                      <tr>
-                        <td>2</td>
-                           <td>Admin</td>
-                           <td>Eğitim</td>
-                           <td>İngilizce Kursu</td>
-                           <td>11.000</td>
-                           <td>7.500</td>
-                           <td>2025-05-15</td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   </tr>
-    
-                   <tr>
-                    <td>3</td>
-                           <td>Admin</td>
-                           <td>Teknoloji</td>
-                           <td>Yeni Laptop Alımı</td>
-                           <td>25.000</td>
-                           <td>10.500</td>
-                           <td>2025-06-30</td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   
-               </tr>
-    
-               <tr>
-                           <td>4</td>
-                           <td>Admin</td>
-                           <td>Sağlık</td>
-                           <td>Diş Tedavisi</td>
-                           <td>12.000</td>
-                           <td>12.500</td>
-                           <td>2025-03-10</td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   
-           </tr>
-    
-           <tr>
-                           <td>5</td>
-                           <td>Admin</td>
-                           <td>Yatırım</td>
-                           <td>Borsa Yatırımı için Sermaye</td>
-                           <td>50.000</td>
-                           <td>18.000</td>
-                           <td>2025-12-31</td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   
-       </tr>
-    
-                  </tbody>
             </table>
                    
         </div>
-    
-    
-
-
     </main>
-   <!--End Main-->
-
-
-
-
     </div>
-
-    <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
-
     <script src="js/scripts.js"></script>
+    <script>
+        const token = localStorage.getItem("access_token");
+        let currentUsername = "";
+        
+        // 🟢 Giriş yapan kullanıcıyı getir
+        async function fetchCurrentUser() {
+            const res = await fetch("http://localhost:8001/financial-goals/me", {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            if (!res.ok) {
+                alert("Kullanıcı bilgisi alınamadı");
+                return;
+            }
+            const data = await res.json();
+            currentUsername = data.username;
+            document.querySelector("input[readonly]").value = currentUsername;
+        }
+        
+        // 🟡 Hedefleri getir
+        async function fetchGoals() {
+            const res = await fetch("http://localhost:8001/financial-goals/", {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            if (!res.ok) {
+                alert("Hedefler alınamadı");
+                return;
+            }
+        
+            const data = await res.json();
+            const table = document.querySelector("table");
+        
+            const oldTbody = table.querySelector("tbody");
+            if (oldTbody) oldTbody.remove();
+        
+            const tbody = document.createElement("tbody");
+            data.forEach((goal, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${currentUsername}</td>
+                    <td>${goal.category}</td>
+                    <td>${goal.goal_name}</td>
+                    <td>${goal.target_amount} ₺</td>
+                    <td>${goal.current_amount} ₺</td>
+                    <td>${new Date(goal.target_date).toLocaleDateString()}</td>
+                    <td>
+                        <span class="material-symbols-outlined delete-btn" onclick="deleteGoal(${goal.id})">delete</span>
+                        <span class="material-symbols-outlined edit-btn"
+                            data-id="${goal.id}"
+                            data-category="${goal.category}"
+                            data-name="${goal.goal_name}"
+                            data-target="${goal.target_amount}"
+                            data-current="${goal.current_amount}"
+                            data-date="${goal.target_date}">
+                            edit
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        
+            table.appendChild(tbody);
+        }
+        
+        // 🟠 Güncelleme Moduna Al
+        function editGoal(id, category, goal_name, target_amount, current_amount, target_date) {
+            const form = document.querySelector("form");
+            form.dataset.goalId = id;
+            form.querySelector("select").value = category;
+            form.querySelectorAll("input")[1].value = goal_name;
+            form.querySelectorAll("input")[2].value = target_amount;
+            form.querySelectorAll("input")[3].value = current_amount;
+            form.querySelectorAll("input")[4].value = new Date(target_date).toISOString().split("T")[0];
+            form.querySelector("input[readonly]").value = currentUsername;
+            document.querySelector(".modal").style.display = "block";
+        }
+        
+        // 🟢 Kaydet Butonu (Ekle veya Güncelle)
+        document.querySelector(".form-btn").addEventListener("click", async function (e) {
+            e.preventDefault();
+            const form = e.target.closest("form");
+            const category = form.querySelector("select").value;
+            const goal_name = form.querySelectorAll("input")[1].value.trim();
+            const rawTargetAmount = form.querySelectorAll("input")[2].value.trim();
+            const rawCurrentAmount = form.querySelectorAll("input")[3].value.trim();
+            const target_date = form.querySelectorAll("input")[4].value;
+        
+            if (!goal_name || !rawTargetAmount || !rawCurrentAmount || !target_date) {
+                alert("Lütfen tüm alanları eksiksiz doldurun.");
+                return;
+            }
+        
+            const target_amount = parseFloat(rawTargetAmount);
+            const current_amount = parseFloat(rawCurrentAmount);
+        
+            if (isNaN(target_amount) || isNaN(current_amount)) {
+                alert("Lütfen geçerli sayısal değerler girin.");
+                return;
+            }
+        
+            const isUpdate = form.dataset.goalId;
+            const url = isUpdate
+                ? `http://localhost:8001/financial-goals/${isUpdate}`
+                : "http://localhost:8001/financial-goals/";
+            const method = isUpdate ? "PUT" : "POST";
+        
+            const bodyData = {
+                category,
+                goal_name,
+                target_amount,
+                current_amount,
+                target_date
+            };
+        
+            const res = await fetch(url, {
+                method,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify(bodyData)
+            });
+        
+            if (res.ok) {
+                alert(isUpdate ? "Hedef güncellendi" : "Hedef eklendi");
+                form.reset();
+                delete form.dataset.goalId;
+                document.querySelector(".modal").style.display = "none";
+                await fetchGoals();
+            } else {
+                const errMsg = await res.text();
+                alert("İşlem başarısız: " + errMsg);
+            }
+        });
+        
+        // 🔴 Silme Fonksiyonu
+        async function deleteGoal(id) {
+            const res = await fetch(`http://localhost:8001/financial-goals/${id}`, {
+                method: "DELETE",
+                headers: { Authorization: `Bearer ${token}` }
+            });
+        
+            if (res.ok) {
+                alert("Silindi");
+                await fetchGoals();
+            } else {
+                alert("Silinemedi");
+            }
+        }
+        
+        // 🔘 Modal açma/kapama
+        document.getElementById("open-btn").addEventListener("click", () => {
+            const form = document.querySelector("form");
+            form.reset();
+            delete form.dataset.goalId;
+            form.querySelector("input[readonly]").value = currentUsername;
+            document.querySelector(".modal").style.display = "block";
+        });
+        
+        document.getElementById("modal-kapat").addEventListener("click", () => {
+            document.querySelector(".modal").style.display = "none";
+        });
+        
+        // ✅ Dinamik olarak eklenen edit butonları için event delegation
+        document.querySelector("table").addEventListener("click", function (e) {
+            if (e.target.matches(".edit-btn")) {
+                const btn = e.target;
+                editGoal(
+                    btn.dataset.id,
+                    btn.dataset.category,
+                    btn.dataset.name,
+                    parseFloat(btn.dataset.target),
+                    parseFloat(btn.dataset.current),
+                    btn.dataset.date
+                );
+            }
+        });
+        
+        // 📦 Sayfa yüklenince başlat
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (!token) {
+                alert("Giriş yapılmamış.");
+                return;
+            }
+            await fetchCurrentUser();
+            await fetchGoals();
+        });
+        </script>
+           
 </body>
 </html>

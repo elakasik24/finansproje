@@ -4,172 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    
-  
     <link rel="stylesheet" href="css/style.css">
-
-     <!--Font-->
-     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-     
-
-     
-     
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-container">
-
-   <!--Header-->
+<div class="grid-container">
+    <!--Header-->
     <header class="header">
-    <div class="menu-icon" onclick="openSidebar()">
-        <span class="material-symbols-outlined">menu</span>
-    </div><span ></span>
-    <div class="header-left">
-    <div class="header-right">
-        <button class="notper-button">
-            <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
-        </button>
-        
+        <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+        <div class="header-left"></div>
+    </header>
+
+    <div class="notification-box" id="notificationBox">
+        <h4>Bildirimler</h4>
+        <ul>
+            <li>Lorem ipsum istinctio magni</li>
+            <li>Lorem ipsum istinctio magni</li>
+            <li>Lorem ipsum istinctio magni</li>
+            <li>Lorem ipsum istinctio magni</li>
+        </ul>
     </div>
-</header>
-   <!--End Header-->
-   <div class="notification-box" id="notificationBox">
-    <h4>Bildirimler</h4>
-    <ul>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-    </ul>
-</div>
 
-   <!--Sidebar-->
-   <aside id="sidebar">
-   <div class="sidebar-title">
-      <div class="sidebar-brand">
-        <span class="material-symbols-outlined">finance</span>
-         <span>CepFinans</span>
-      </div>
-      <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
-   </div>
-   <ul class="sidebar-list">
-    <li class="sidebar-list-item">
-        <a href="Index.html">
-       <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
-    </a>
-    
-    </li>
-    <li class="sidebar-list-item">
-        <a href="islemler.html">
-      <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="budget.html">
-        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="debt.html">
-        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="abone.html">
-        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="fnshedef.html">
-        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="ai.html">
-        <span class="material-symbols-outlined">robot_2</span>AI
-    </a>
-    </li>
+    <!--Sidebar-->
+    <aside id="sidebar">
+        <div class="sidebar-title">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">finance</span>
+                <span>Kişisel Finans</span>
+            </div>
+            <span class="material-symbols-outlined" onclick="closeSidebar()">cancel</span>
+        </div>
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item"><a href="Index.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a></li>
+            <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+            <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
+            <li class="sidebar-list-item"><a href="budget.html"><span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi</a></li>
+            <li class="sidebar-list-item"><a href="debt.html"><span class="material-symbols-outlined">send_money</span>Borç Yönetimi</a></li>
+            <li class="sidebar-list-item"><a href="abone.html"><span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi</a></li>
+            <li class="sidebar-list-item"><a href="fnshedef.html"><span class="material-symbols-outlined">label_important</span>Finansal Hedefler</a></li>
+            <li class="sidebar-list-item"><a href="ai.html"><span class="material-symbols-outlined">robot_2</span>AI</a></li>
+            <li class="sidebar-list-item cizgi"><a href="settings.html"><span class="material-symbols-outlined">settings</span>Ayarlar</a></li>
+            <li class="sidebar-list-item"><a href="Login.html"><span class="material-symbols-outlined">logout</span>Çıkış</a></li>
+        </ul>
+    </aside>
 
-     
-    <li class="sidebar-list-item   cizgi">
-        <a href="settings.html">
-        <span class="material-symbols-outlined">settings</span>Ayarlar
-    </a>
-    </li>
-
-
-    <li class="sidebar-list-item">
-        <a href="Login.html">
-            <span class="material-symbols-outlined">logout</span>Çıkış
-    </a>
-    </li>
-    
-   </ul>
-</aside>
-   <!--End Sidebar-->
-
-   <!--Main-->
+    <!--Main-->
     <main class="main-container">
         <div class="main-title">
             <p class="font-weight-bold"></p>
         </div>
-      
+
         <div class="transaction">
             <h2 class="table-box">BORÇ YÖNETİMİ </h2>
 
             <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>BORÇ EKLE</button>
-            <!--start açılıp kapanan form-->
 
             <div class="modal">
-                
-                
-                <form>
-                     <h3 id="modal-kapat">x</h3>
+                <form id="debt-form">
+                    <h3 id="modal-kapat">x</h3>
 
-                     <label> Kullanıcı </label>
-                     <input type="text" value="Kullanıcı" readonly>
+                    <label>Kullanıcı</label>
+                    <input type="text" id="username-display" readonly>
 
-                     <label >Borç Veren</label>
-                     <select>
-                         <option value="Market" selected>Kredi Kartı</option>
-                         <option value="Maaş" >Kişisel Kredi</option>
-                         <option value="Freelance" selected>Konut Kredisi</option>
-                         <option value="Borç" >Öğrenim Kredisi</option>
-                         <option value="araç">Araç Kredisi</option>
-                         <option value="tüket">Tüketici Kredisi</option>
-                         <option value="iç">İç Borç</option>
-                     </select>
+                    <label>Borç Veren</label>
+                    <select id="creditor-select">
+                        <option value="Kredi Kartı">Kredi Kartı</option>
+                        <option value="Kışisel Kredi">Kişisel Kredi</option>
+                        <option value="Konut Kredisi">Konut Kredisi</option>
+                        <option value="Öğrenim Kredisi">Öğrenim Kredisi</option>
+                        <option value="Araç Kredisi">Araç Kredisi</option>
+                        <option value="Tüketici Kredisi">Tüketici Kredisi</option>
+                        <option value="İç Borç">İç Borç</option>
+                    </select>
 
-                    <label >Borç Tutarı</label>
-            
-                    <input type="number" value="301.8">
-                    
+                    <label>Borç Tutarı</label>
+                    <input type="number" id="amount-input">
+
                     <label>Ödeme Tarihi</label>
-                    <input type="date" value="2024-11-25" required>
-                 
-                     <label>Ödeme Durumu</label>
-                     <select>
+                    <input type="date" id="due-date-input" required>
+
+                    <label>Ödeme Durumu</label>
+                    <select id="status-select">
                         <option value="Ödendi">Ödendi</option>
                         <option value="Ödenmedi">Ödenmedi</option>
                         <option value="Ödeniyor">Ödeniyor</option>
-                     </select>
+                    </select>
 
-                   
-
-                   
-                    
-                   
-
-                    <button  class="form-btn">kaydet</button>
+                    <button type="submit" class="form-btn">Kaydet</button>
                 </form>
             </div>
-            
-         <!--end açılıp kapanan form-->
+
             <table>
-    
-                  <thead>
+                <thead>
                     <tr>
                         <th>Kullanıcı</th>
                         <th>Borç Veren</th>
@@ -177,115 +106,171 @@
                         <th>Ödeme Tarihi</th>
                         <th>Durum</th>
                         <th>İşlemler</th>
-                       
-                    
                     </tr>
-    
-                  </thead>
-    
-                  <tbody>
-                      <tr>
-                           <td>Admin</td>
-                           <td>Banka</td>
-                           <td>1200</td>
-                           <td>11.03.2020</td>
-                           <td><span class="status status-odendi">Ödendi</span></td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   
-                      </tr>
-    
-                      <tr>
-                        <td>Admin</td>
-                           <td>Elektirik Şirketi</td>
-                           <td>1200</td>
-                           <td>11.03.2020</td>
-                           <td><span class="status status-odenmedi">Ödenmedi</span></td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                    </td>
-                   </tr>
-    
-                   <tr>
-                    <td>Admin</td>
-                    <td>Su Faturası</td>
-                    <td>1200</td>
-                    <td>11.03.2020</td>
-                    <td><span class="status status-odendi">Ödendi</span></td>
-                    <td> <button class="delete-btn"> 
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                   <button class="edit-btn">
-                         <span class="material-symbols-outlined">published_with_changes</span>
-                  </button>
-                 </td>
-                   
-               </tr>
-    
-               <tr>
-                <td>Admin</td>
-                <td>Kredi Kartı</td>
-                <td>1200</td>
-                <td>11.03.2020</td>
-                <td><span class="status status-odenmedi">Ödenmedi</span></td>
-                <td> <button class="delete-btn"> 
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-               <button class="edit-btn">
-                     <span class="material-symbols-outlined">published_with_changes</span>
-              </button>
-             </td>
-                   
-           </tr>
-    
-           <tr>
-            <td>Admin</td>
-            <td>Market</td>
-            <td>1200</td>
-            <td>11.03.2020</td>
-            <td><span class="status status-odeniyor">Ödeniyor</span></td>
-            <td> <button class="delete-btn"> 
-                <span class="material-symbols-outlined">delete</span>
-            </button>
-           <button class="edit-btn">
-                 <span class="material-symbols-outlined">published_with_changes</span>
-          </button>
-        </td>
-                   
-       </tr>
-    
-                  </tbody>
+                </thead>
+                <tbody id="debt-table-body">
+                    <!-- JS ile doldurulacak -->
+                </tbody>
             </table>
-                   
         </div>
-    
-    
-
-
     </main>
-   <!--End Main-->
+</div>
 
+<!-- SCRIPTS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem('access_token');
+    const debtForm = document.getElementById('debt-form');
+    const tableBody = document.getElementById('debt-table-body');
+    const openBtn = document.getElementById('open-btn');
+    const modal = document.querySelector('.modal');
+    const modalClose = document.getElementById('modal-kapat');
+    const usernameInput = document.getElementById('username-display');
+    let currentUsername = '';
+    let updateId = null;
 
+    async function fetchUser() {
+        try {
+            const res = await fetch('http://127.0.0.1:8001/debts/me', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                currentUsername = data.username;
+                usernameInput.value = currentUsername;
+            } else {
+                usernameInput.value = "Bilinmiyor";
+            }
+        } catch (err) {
+            usernameInput.value = "Hata";
+        }
+    }
 
+    openBtn.addEventListener('click', () => {
+        updateId = null;
+        debtForm.reset();
+        usernameInput.value = currentUsername;
+        modal.style.display = 'block';
+    });
 
-    </div>
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
-    <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
+    async function fetchDebts() {
+        const res = await fetch('http://127.0.0.1:8001/debts/', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const debts = await res.json();
+        tableBody.innerHTML = '';
+        debts.forEach(debt => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${currentUsername}</td>
+                <td>${debt.creditor}</td>
+                <td>${debt.amount}</td>
+                <td>${new Date(debt.due_date).toLocaleDateString()}</td>
+                <td><span class="status status-${debt.status.toLowerCase()}">${debt.status}</span></td>
+                <td>
+                    <span class="material-symbols-outlined delete-btn" data-id="${debt.id}">delete</span>
+                    <span class="material-symbols-outlined edit-btn"
+                        data-id="${debt.id}"
+                        data-creditor="${debt.creditor}"
+                        data-amount="${debt.amount}"
+                        data-due="${debt.due_date}"
+                        data-status="${debt.status}">edit</span>
+                </td>
+            `;
+            tableBody.appendChild(tr);
+        });
 
-    <script src="js/scripts.js"></script>
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const id = btn.getAttribute('data-id');
+                await deleteDebt(id);
+                fetchDebts();
+            });
+        });
+
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                updateId = btn.getAttribute('data-id');
+                document.getElementById('creditor-select').value = btn.getAttribute('data-creditor');
+                document.getElementById('amount-input').value = btn.getAttribute('data-amount');
+                document.getElementById('due-date-input').value = btn.getAttribute('data-due').split('T')[0];
+                document.getElementById('status-select').value = btn.getAttribute('data-status');
+                usernameInput.value = currentUsername;
+                modal.style.display = 'block';
+            });
+        });
+    }
+
+    async function deleteDebt(id) {
+        await fetch(`http://127.0.0.1:8001/debts/${id}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+    }
+
+    debtForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const creditor = document.getElementById('creditor-select').value;
+        const amount = parseFloat(document.getElementById('amount-input').value);
+        const dueDate = document.getElementById('due-date-input').value;
+        const status = document.getElementById('status-select').value;
+
+        const method = updateId ? 'PUT' : 'POST';
+        const url = updateId 
+            ? `http://127.0.0.1:8001/debts/${updateId}` 
+            : 'http://127.0.0.1:8001/debts/';
+
+        try {
+            const response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ creditor, amount, due_date: dueDate, status })
+            });
+
+            if (response.ok) {
+                debtForm.reset();
+                modal.style.display = 'none';
+                updateId = null;
+                fetchDebts();
+            } else {
+                const errData = await response.json();
+                alert("Hata: " + errData.detail);
+            }
+        } catch (error) {
+            console.error("Sunucu hatası:", error);
+            alert("Sunucu hatası oluştu.");
+        }
+    });
+
+    fetchUser();
+    fetchDebts();
+});
+</script>
+
+<style>
+    .status-ödendi {
+        color: green;
+        font-weight: bold;
+    }
+
+    .status-ödenmedi {
+        color: red;
+        font-weight: bold;
+    }
+
+    .status-ödeniyor {
+        color: orange;
+        font-weight: bold;
+    }
+</style>
+
 </body>
 </html>

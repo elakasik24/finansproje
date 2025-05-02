@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForgotMYpassword</title>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-     <link rel="stylesheet" href="css/style.css">
-
-     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForgotMYpassword</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-   
-   <div class="row">
-      <h1>Şifremi Unuttum </h1>
-      <h5 class="information-text"> Lütfen Email Adresinizi  Giriniz.</h6>
-      <div class="form-group">
 
-        
-        <input type="email">
-        <p><label for="username">Email</label></p>
-           
-           <a href="passwordreset.html">
-           <button>Giriş Bağlantısı Gönder</button>
-        </a>
-      </div>
+  <div class="row">
+    <h1>Şifremi Unuttum</h1>
+    <h5 class="information-text">Lütfen Email Adresinizi Giriniz.</h5>
+    <div class="form-group">
 
-      <div class="footer">
-        <h5>  <a href="register.html">Yeni Hesap Oluştur ?</a></h5>
-        <h5>  <a href="Login.html"> Zaten Hesabım Var .</a></h5>
-      </div>
-   </div>
+      <!-- ✅ input alanına id ekledik -->
+      <input type="email" id="reset-email" required>
+      <p><label for="reset-email">Email</label></p>
 
+      <!-- ✅ button artık doğrudan erişilebilir -->
+      <button id="send-reset-link">Giriş Bağlantısı Gönder</button>
     </div>
 
+    <div class="footer">
+      <h5><a href="register.html">Yeni Hesap Oluştur ?</a></h5>
+      <h5><a href="Login.html">Zaten Hesabım Var.</a></h5>
+    </div>
+  </div>
 
+  <!-- JS script -->
+  <script>
+      document.getElementById("send-reset-link").addEventListener("click", async function () {
+      const email = document.getElementById("reset-email").value.trim();
 
+      if (!email) {
+         alert("Lütfen bir e-posta adresi girin.");
+         return;
+      }
 
+      try {
+         const response = await fetch("http://127.0.0.1:8001/auth/forgot_password", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email: email })
+         });
 
+         const data = await response.json();
 
+         if (response.ok) {
+            alert("✅ " + data.message);
+            // ✅ Kullanıcıyı passwordreset.html sayfasına yönlendir
+            window.location.href = "passwordreset.html";
+         } else {
+            alert("❌ " + data.detail);
+         }
 
+      } catch (error) {
+         console.error("İstek hatası:", error);
+         alert("⚠️ Sunucuya ulaşılamadı.");
+      }
+      });
 
-
-
-   <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
-
-    <script src="js/scripts.js"></script>
+  </script>
 </body>
 </html>

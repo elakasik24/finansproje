@@ -3,252 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    
-  
+    <title>Abonelik Yönetimi</title>
     <link rel="stylesheet" href="css/style.css">
-
-     <!--Font-->
-     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-     
-
-     
-     
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-container">
-
-   <!--Header-->
+<div class="grid-container">
+    <!-- Header -->
     <header class="header">
-    <div class="menu-icon" onclick="openSidebar()">
-        <span class="material-symbols-outlined">menu</span>
-    </div><span ></span>
-    <div class="header-left">
-    <div class="header-right">
-        <button class="notper-button">
-        <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
-    </button>
-   
-    </div>
-</header>
-   <!--End Header-->
-   <div class="notification-box" id="notificationBox">
-    <h4>Bildirimler</h4>
-    <ul>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-    </ul>
-</div>
+        <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+    </header>
 
-   <!--Sidebar-->
-   <aside id="sidebar">
-   <div class="sidebar-title">
-      <div class="sidebar-brand">
-        <span class="material-symbols-outlined">finance</span>
-         <span>CepFinans</span>
-      </div>
-      <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
-   </div>
-   <ul class="sidebar-list">
-    <li class="sidebar-list-item">
-        <a href="Index.html">
-       <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
-    </a>
-    
-    </li>
-    <li class="sidebar-list-item">
-        <a href="islemler.html">
-      <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="budget.html">
-        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="debt.html">
-        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="abone.html">
-        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="fnshedef.html">
-        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="ai.html">
-        <span class="material-symbols-outlined">robot_2</span>AI
-        </a>
-    </li>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-title">
+            <div class="sidebar-brand">
+                <span class="material-symbols-outlined">finance</span>
+                <span>Kişisel Finans</span>
+            </div>
+            <span class="material-symbols-outlined" onclick="closeSidebar()">cancel</span>
+        </div>
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item"><a href="Index.html"><span class="material-symbols-outlined">dashboard</span>Dashboard</a></li>
+            <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+            <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
+            <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi</a></li>
+            <li class="sidebar-list-item"><a href="debt.html"><span class="material-symbols-outlined">send_money</span>Borç Yönetimi</a></li>
+            <li class="sidebar-list-item"><a href="abone.html"><span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi</a></li>
+            <li class="sidebar-list-item"><a href="fnshedef.html"><span class="material-symbols-outlined">label_important</span>Finansal Hedefler</a></li>
+            <li class="sidebar-list-item"><a href="ai.html"><span class="material-symbols-outlined">robot_2</span>AI</a></li>
+            <li class="sidebar-list-item cizgi"><a href="settings.html"><span class="material-symbols-outlined">settings</span>Ayarlar</a></li>
+            <li class="sidebar-list-item"><a href="Login.html"><span class="material-symbols-outlined">logout</span>Çıkış</a></li>
+        </ul>
+    </aside>
 
-     
-    <li class="sidebar-list-item   cizgi">
-        <a href="settings.html">
-        <span class="material-symbols-outlined">settings</span>Ayarlar
-    </a>
-    </li>
-
-    <li class="sidebar-list-item">
-        <a href="Login.html">
-            <span class="material-symbols-outlined">logout</span>Çıkış
-    </a>
-    </li>
-    
-   </ul>
-</aside>
-   <!--End Sidebar-->
-
-   <!--Main-->
+    <!-- Main -->
     <main class="main-container">
         <div class="main-title">
             <p class="font-weight-bold"></p>
         </div>
-      
+
         <div class="transaction">
             <h2 class="table-box">ABONELİK YÖNETİMİ </h2>
+    
 
-            <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>Abonelik Ekle</button>
-            <!--start açılıp kapanan form-->
+        <div class="transaction">
+            <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>ABONELİK EKLE</button>
 
             <div class="modal">
-                
-                
-                <form>
-                     <h3 id="modal-kapat">x</h3>
+                <form id="subscription-form">
+                    <h3 id="modal-kapat">x</h3>
 
-                     <label> Kullanıcı </label>
-                     <input type="text" value="Kullanıcı" readonly>
+                    <label>Kullanıcı</label>
+                    <input type="text" id="username-display" readonly>
 
-                     <label >Kategori</label>
-                     <input type="text">
+                    <label>Abonelik Türü</label>
+                    <input type="text" id="subscription-type" required>
 
-                    <label >Tutar</label>
-            
-                    <input type="number" value="301.8">
-                    
-                    <label>Fatura Tarihi</label>
-                    <input type="date" value="2024-11-25" required>
-                
+                    <label>Tutar</label>
+                    <input type="number" id="subscription-amount" required>
 
-                    <label >Yenilenme Periyodu</label>
-                    <select>
-                        <option value="Aylık" selected>Aylık</option>
-                         <option value="Yıllık" >Yıllık</option>
+                    <label>Yenileme Tarihi</label>
+                    <input type="date" id="subscription-renew-date" required>
+
+                    <label>Durum</label>
+                    <select id="subscription-status">
+                        <option value="Aylık">Aylık</option>
+                        <option value="Yıllık">Yıllık</option>
                     </select>
 
-                    
-                    
-                   
-
-                    <button  class="form-btn">kaydet</button>
+                    <button type="submit" class="form-btn">Kaydet</button>
                 </form>
             </div>
-            
-         <!--end açılıp kapanan form-->
+
             <table>
-    
-                  <thead>
+                <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Kullanıcı</th>
-                        <th>Abonelik Adı</th>
+                        <th>Tür</th>
                         <th>Tutar</th>
-                        <th>Fatura Tarihi</th>
-                        <th>Yenilenme Periyodu</th>
+                        <th>Yenileme Tarihi</th>
+                        <th>Durum</th>
                         <th>İşlemler</th>
-                    
                     </tr>
-    
-                  </thead>
-    
-                  <tbody>
-                      <tr>
-                           <td>1</td>
-                           <td>Admin</td>
-                           <td>Netflix</td>
-                           <td>149.99</td>
-                           <td>11.03.2020</td>
-                           <td><span class="yenilenme yenilenme-aylık">Aylık</span></td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   
-                      </tr>
-    
-                      <tr>
-                           <td>2</td>
-                           <td>Admin</td>
-                           <td>Spotyfy</td>
-                           <td>59.99</td>
-                           <td>11.03.2020</td>
-                           <td><span class="yenilenme yenilenme-aylık">Aylık</span></td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                    </td>
-                   </tr>
-    
-                   <tr>
-                    <td>3</td>
-                    <td>Admin</td>
-                    <td>Disney Plus</td>
-                    <td>164.90</td>
-                    <td>11.03.2020</td>
-                    <td><span class="yenilenme yenilenme-yıllık">Yıllık</span></td>
-                    <td> <button class="delete-btn"> 
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                   <button class="edit-btn">
-                         <span class="material-symbols-outlined">published_with_changes</span>
-                  </button> </td>
-                   
-               </tr>
-    
-             
-    
-        
-    
-                  </tbody>
+                </thead>
+                <tbody id="subscription-table-body"></tbody>
             </table>
-                   
         </div>
-    
-    
-
-
     </main>
-   <!--End Main-->
+</div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem('access_token');
+        const form = document.getElementById('subscription-form');
+        const tableBody = document.getElementById('subscription-table-body');
+        const openBtn = document.getElementById('open-btn');
+        const modal = document.querySelector('.modal');
+        const modalClose = document.getElementById('modal-kapat');
+        const usernameInput = document.getElementById('username-display');
+        let currentUsername = '';
+        let updateId = null;
+    
+        async function fetchUser() {
+            try {
+                const res = await fetch('http://127.0.0.1:8001/subscriptions/me', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await res.json();
+                currentUsername = data.username;
+                usernameInput.value = currentUsername;
+            } catch {
+                usernameInput.value = "Bilinmiyor";
+            }
+        }
+    
+        openBtn.addEventListener('click', () => {
+            updateId = null;
+            form.reset();
+            usernameInput.value = currentUsername;
+            modal.style.display = 'block';
+        });
+    
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    
+        async function fetchSubscriptions() {
+            const res = await fetch('http://127.0.0.1:8001/subscriptions/', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            const data = await res.json();
+            tableBody.innerHTML = '';
+            data.forEach(sub => {
+                const cssClass = sub.renewal_period === 'Aylık' ? 'aktif' :
+                                 sub.renewal_period === 'Yıllık' ? 'pasif' : 'bilinmiyor';
+    
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${currentUsername}</td>
+                    <td>${sub.name}</td>
+                    <td>${sub.amount}</td>
+                    <td>${new Date(sub.billing_date).toLocaleDateString()}</td>
+                    <td><span class="status status-${cssClass}">${sub.renewal_period}</span></td>
+                    <td>
+                        <span class="material-symbols-outlined delete-btn" data-id="${sub.id}">delete</span>
+                        <span class="material-symbols-outlined edit-btn"
+                              data-id="${sub.id}"
+                              data-name="${sub.name}"
+                              data-amount="${sub.amount}"
+                              data-date="${sub.billing_date}"
+                              data-renewal="${sub.renewal_period}">edit</span>
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+    
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const id = btn.getAttribute('data-id');
+                    await fetch(`http://127.0.0.1:8001/subscriptions/${id}`, {
+                        method: 'DELETE',
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    fetchSubscriptions();
+                });
+            });
+    
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    updateId = btn.getAttribute('data-id');
+                    document.getElementById('subscription-type').value = btn.getAttribute('data-name');
+                    document.getElementById('subscription-amount').value = btn.getAttribute('data-amount');
+                    document.getElementById('subscription-renew-date').value = btn.getAttribute('data-date').split('T')[0];
+                    document.getElementById('subscription-status').value = btn.getAttribute('data-renewal');
+                    usernameInput.value = currentUsername;
+                    modal.style.display = 'block';
+                });
+            });
+        }
+    
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('subscription-type').value;
+            const amount = parseFloat(document.getElementById('subscription-amount').value);
+            const billing_date = document.getElementById('subscription-renew-date').value;
+            const renewal_period = document.getElementById('subscription-status').value;
+    
+            const method = updateId ? 'PUT' : 'POST';
+            const url = updateId 
+                ? `http://127.0.0.1:8001/subscriptions/${updateId}` 
+                : 'http://127.0.0.1:8001/subscriptions/';
+    
+            try {
+                const res = await fetch(url, {
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ name, amount, billing_date, renewal_period })
+                });
+    
+                if (res.ok) {
+                    form.reset();
+                    modal.style.display = 'none';
+                    updateId = null;
+                    fetchSubscriptions();
+                } else {
+                    const err = await res.json();
+                    if (Array.isArray(err.detail)) {
+                        const messages = err.detail.map(e => e.msg || JSON.stringify(e)).join('\n');
+                        alert("Hata:\n" + messages);
+                    } else {
+                        alert("Hata: " + (err.detail || JSON.stringify(err)));
+                    }
+                }
+            } catch (err) {
+                console.error("Hata:", err);
+                alert("Sunucu hatası");
+            }
+        });
+    
+        fetchUser();
+        fetchSubscriptions();
+    });
+    </script>
+    
 
+<style>
+    .status-aktif {
+        color: green;
+        font-weight: bold;
+    }
 
-
-    </div>
-
-    <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
-
-    <script src="js/scripts.js"></script>
+    .status-pasif {
+        color: rgb(155, 231, 23);
+        font-weight: bold;
+    }
+</style>
 </body>
 </html>

@@ -3,35 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İŞLEMLER</title>
-    
+    <title>İŞLEMLER</title>   
     <link rel="stylesheet" href="css/style.css">
-     <!--Font-->
      <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-
-     
-     
+     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">  
 </head>
 <body>
     <div class="grid-container">
-
-   <!--Header-->
     <header class="header">
     <div class="menu-icon" onclick="openSidebar()">
         <span class="material-symbols-outlined">menu</span>
     </div><span ></span>
     <div class="header-left">
-    <div class="header-right">
-        <button class="notper-button">
-            <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
-        </button>
-        
-    </div>
 </header>
-   <!--End Header-->
    <div class="notification-box" id="notificationBox">
     <h4>Bildirimler</h4>
     <ul>
@@ -41,8 +25,6 @@
         <li>Lorem ipsum istinctio magni</li>
     </ul>
 </div>
-
-   <!--Sidebar-->
    <aside id="sidebar">
    <div class="sidebar-title">
       <div class="sidebar-brand">
@@ -56,13 +38,9 @@
         <a href="Index.html">
        <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard 
     </a>
-    
     </li>
-    <li class="sidebar-list-item">
-        <a href="islemler.html">
-        <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
-    </a>
-    </li>
+    <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+    <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
     <li class="sidebar-list-item">
         <a href="budget.html">
         <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
@@ -87,13 +65,10 @@
         <a href="ai.html">
         <span class="material-symbols-outlined">robot_2</span>AI
     </a>
-    </li>
-
-     
+    </li>    
     <li class="sidebar-list-item   cizgi">
         <span class="material-symbols-outlined">settings</span>Ayarlar
     </li>
-
     <li class="sidebar-list-item">
         <a href="Login.html">
             <span class="material-symbols-outlined">logout</span>Çıkış
@@ -103,63 +78,41 @@
 
 
 </aside>
-   <!--End Sidebar-->
-
-   <!--Main-->
     <main class="main-container">
         <div class="main-title">
-            <p class="font-weight-bold">İŞLEMLER</p>
         </div>
       
         <div class="transaction">
             <h2 class="table-box">GELİR İŞLEMLERİ </h2>
 
             <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>İŞLEM EKLE</button>
-            <!--start açılıp kapanan form-->
-
             <div class="modal">
-                
-                
                 <form>
-                     <h3 id="modal-kapat">x</h3>
-
-                     <label> Tutar </label>
-                     <input type="number" value="301.8">
-
+                    <h3 id="modal-kapat">x</h3>
+                    <input type="hidden" id="income-id">
+                    <label> Tutar </label>
+                    <input type="number" value="301.8" step="any">
                     <label >Tarih</label>
-                    <input type="date" value="2024-11-25">
-
+                    <input type="date" id="income-date" name="date" required>
                     <label >Açıklama</label>
                     <input type="text" value="Gross Market">
-                    
                     <label>İşlem Türü</label>
                     <input type="text" value="Gelir" id="income-tür" class="income-tür" readonly>
-
                     <label >Kategori</label>
                     <select>
                         <option value="Market" selected>Market</option>
-                        <option value="Maaş" >Ulaşım</option>
-                        <option value="Freelance" selected>Eğlence</option>
-                        <option value="Borç" >Kira</option>
+                        <option value="Maaş" >Maaş</option>
+                        <option value="Freelance" selected>Freelance</option>
+                        <option value="Kira" >Kira</option>
                         <option value="sağlık">Sağlık</option>
                         <option value="Restoran">Restoran & Kafe</option>
-                        <option value="Kişisel Bakım">Kişisel Bakım</option>
-                        <option value="Hobi">Hobi</option>
-                        <option value="Teknoloji">Teknoloji</option>
                         <option value="Eğitim">Eğitim</option>
-                        <option value="Ev&Yaşam">Ev & Yaşam</option>
-                        <option value="Aile&Sosal">Aile&Sosyal Hayat</option>
                         <option value="Borç">Borç</option>
                     </select>
-                   
-
                     <button  class="form-btn">kaydet</button>
                 </form>
             </div>
-            
-         <!--end açılıp kapanan form-->
             <table>
-    
                   <thead>
                     <tr>
                         <th>Tarih</th>
@@ -168,291 +121,168 @@
                         <th>Açıklama</th>
                         <th>Tutar</th>
                         <th>İşlemler</th>
-                    
                     </tr>
-    
                   </thead>
-    
-                  <tbody>
-                      <tr>
-                           <td>12.09.2025</td>
-                           <td>Gider</td>
-                           <td>Market Alışverişi</td>
-                           <td>Lorem ipsum </td>
-                           <td class="warning">1200</td>
-                           <td> <button class="delete-btn"> <span class="material-symbols-outlined">delete</span>
-                              </button>
-                            <button class="edit-btn">
-                                <span class="material-symbols-outlined">
-                                    published_with_changes
-                                    </span>
-                            </button> </td>
-                   
-                      </tr>
-    
-                      <tr>
-                        <td>11.08.2025</td>
-                        <td>Gelir</td>
-                        <td>Maaş</td>
-                        <td>Lorem ipsum </td>
-                        <td class="warning">30000</td>
-                        <td>
-                            <button class="delete-btn"> 
-                                <span class="material-symbols-outlined">delete</span>
-                            </button>
-                           <button class="edit-btn">
-                                 <span class="material-symbols-outlined">published_with_changes</span>
-                          </button>
-                    
-                    </td>
-                   
-                   </tr>
-    
-                   <tr>
-                    <td>09.08.2025</td>
-                    <td>Gelir</td>
-                    <td>Freelance</td>
-                    <td>Lorem ipsum </td>
-                    <td class="warning">12000</td>
-                    <td> <button class="delete-btn"> 
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                   <button class="edit-btn">
-                         <span class="material-symbols-outlined">published_with_changes</span>
-                  </button>
-                 </td>
-                   
-               </tr>
-    
-               <tr>
-                <td>07.08.2025</td>
-                <td>Gider</td>
-                <td>Borç</td>
-                <td>Lorem ipsum </td>
-                <td class="warning">200</td>
-                <td>
-                    <button class="delete-btn"> 
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                   <button class="edit-btn">
-                         <span class="material-symbols-outlined">published_with_changes</span>
-                  </button>
-                </td>
-                   
-           </tr>
-    
-           <tr>
-            <td>04.06.2025</td>
-            <td>Gider</td>
-            <td>Kişisel Bakım</td>
-            <td>Lorem ipsum </td>
-            <td class="warning">1000</td>
-            <td>
-                <button class="delete-btn"> 
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-               <button class="edit-btn">
-                     <span class="material-symbols-outlined">published_with_changes</span>
-              </button>
-             </td>
-                   
-       </tr>
-
-       <tr>
-        <td>04.06.2025</td>
-        <td>Gider</td>
-        <td>Kişisel Bakım</td>
-        <td>Lorem ipsum </td>
-        <td class="warning">1000</td>
-        <td>
-            <button class="delete-btn"> 
-                <span class="material-symbols-outlined">delete</span>
-            </button>
-           <button class="edit-btn">
-                 <span class="material-symbols-outlined">published_with_changes</span>
-          </button>
-         </td>
-               
-   </tr>
-    
-                  </tbody>
             </table>
-                   
         </div>
-    
-    <!--Silinebilir bozulursa-->
     <div class="main-title">
         <p class="font-weight-bold"></p>
     </div>
-  
-    <div class="transaction">
-        <h2 class="table-box">GİDER İŞLEMLERİ </h2>
-
-        <button id="open-btnn" class="open-btnn"><span class="material-symbols-outlined">add_circle</span>İŞLEM EKLE</button>
-        <!--start açılıp kapanan form-->
-
-        <div class="modall">
-            
-            
-            <form>
-                 <h3 id="modal-kapatt">x</h3>
-
-                 <label> Tutar </label>
-                 <input type="number" value="301.8">
-
-                <label >Tarih</label>
-                <input type="date" value="2024-11-25">
-
-                <label >Açıklama</label>
-                <input type="text" value="Gross Market">
-                
-                <label>İşlem Türü</label>
-                <input type="text" value="Gider" id="in-tür" class="in-tür" readonly>
-
-                <label >Kategori</label>
-                <select>
-                    <option value="Market" selected>Market</option>
-                    <option value="Maaş" >Ulaşım</option>
-                    <option value="Freelance" selected>Eğlence</option>
-                    <option value="Borç" >Kira</option>
-                    <option value="sağlık">Sağlık</option>
-                    <option value="Restoran">Restoran & Kafe</option>
-                    <option value="Kişisel Bakım">Kişisel Bakım</option>
-                    <option value="Hobi">Hobi</option>
-                    <option value="Teknoloji">Teknoloji</option>
-                    <option value="Eğitim">Eğitim</option>
-                    <option value="Ev&Yaşam">Ev & Yaşam</option>
-                    <option value="Aile&Sosal">Aile&Sosyal Hayat</option>
-                    <option value="Borç">Borç</option>
-                </select>
-               
-
-                <button  class="form-btn">kaydet</button>
-            </form>
-        </div>
-        
-     <!--end açılıp kapanan form-->
-        <table>
-
-              <thead>
-                <tr>
-                    <th>Tarih</th>
-                    <th>İşlem Türü</th>
-                    <th>Kategori</th>
-                    <th>Açıklama</th>
-                    <th>Tutar</th>
-                    <th>İşlemler</th>
-                
-                </tr>
-
-              </thead>
-
-              <tbody>
-                  <tr>
-                       <td>12.09.2025</td>
-                       <td>Gider</td>
-                       <td>Market Alışverişi</td>
-                       <td>Lorem ipsum </td>
-                       <td class="warning">1200</td>
-                       <td> <button class="delete-btn"> 
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                   <button class="edit-btn">
-                         <span class="material-symbols-outlined">published_with_changes</span>
-                  </button>
-                </td>
-               
-                  </tr>
-
-                  <tr>
-                    <td>11.08.2025</td>
-                    <td>Gelir</td>
-                    <td>Maaş</td>
-                    <td>Lorem ipsum </td>
-                    <td class="warning">30000</td>
-                    <td>
-                        <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-               
-               </tr>
-
-               <tr>
-                <td>09.08.2025</td>
-                <td>Gelir</td>
-                <td>Freelance</td>
-                <td>Lorem ipsum </td>
-                <td class="warning">12000</td>
-                <td>
-                    <button class="delete-btn"> 
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                   <button class="edit-btn">
-                         <span class="material-symbols-outlined">published_with_changes</span>
-                  </button>
-                 </td>
-               
-           </tr>
-
-           <tr>
-            <td>07.08.2025</td>
-            <td>Gider</td>
-            <td>Borç</td>
-            <td>Lorem ipsum </td>
-            <td class="warning">200</td>
-            <td>
-                <button class="delete-btn"> 
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-               <button class="edit-btn">
-                     <span class="material-symbols-outlined">published_with_changes</span>
-              </button>
-            </td>
-               
-       </tr>
-
-       <tr>
-        <td>04.06.2025</td>
-        <td>Gider</td>
-        <td>Kişisel Bakım</td>
-        <td>Lorem ipsum </td>
-        <td class="warning">1000</td>
-        <td>
-            <button class="delete-btn"> 
-                <span class="material-symbols-outlined">delete</span>
-            </button>
-           <button class="edit-btn">
-                 <span class="material-symbols-outlined">published_with_changes</span>
-          </button>
-         </td>
-               
-   </tr>
-
-              </tbody>
-        </table>
-               
-    </div>
-    <!--silinen end-->
-
     </main>
-   <!--End Main-->
-
-
-
-
     </div>
-
-    <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
 
-    <script src="js/scripts.js"></script>
+    <script>
+        const apiUrl = "http://localhost:8001/income";
+        const token = localStorage.getItem("access_token");
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchIncomes();
+        
+            const form = document.querySelector("form");
+            const modal = document.querySelector(".modal");
+            const openBtn = document.getElementById("open-btn");
+            const closeBtn = document.getElementById("modal-kapat");
+        
+            // Form açıldığında sıfırla
+            openBtn.addEventListener("click", () => {
+                form.reset();
+                document.getElementById("income-id")?.remove(); // varsa id input'u temizle
+                modal.style.display = "block";
+            });
+        
+            // Formu kapatma
+            closeBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+        
+            // Form gönderme işlemi
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+        
+                const idInput = document.getElementById("income-id");
+                const id = idInput ? idInput.value : "";
+        
+                const amountInput = form.querySelector('input[type="number"]');
+                const amount = parseFloat(amountInput.value);
+                const descriptionInput = form.querySelectorAll('input[type="text"]')[0];
+                const description = descriptionInput.value.trim();
+                const dateInput = document.getElementById("income-date");
+                const date = dateInput.value;
+                const category = form.querySelector("select").value;
+        
+                // Geçersiz giriş kontrolü
+                if (isNaN(amount) || !description || !date || !category) {
+                    alert("Lütfen tüm alanları doğru şekilde doldurun.");
+                    return;
+                }
+        
+                const incomeData = {
+                    amount,
+                    category,
+                    description,
+                    date: date
+                };
+        
+                const isUpdate = id !== "";
+        
+                const res = await fetch(isUpdate ? `${apiUrl}/${id}` : apiUrl, {
+                    method: isUpdate ? "PUT" : "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(incomeData)
+                });
+        
+                if (res.ok) {
+                    form.reset();
+                    if (idInput) idInput.remove(); // güncelleme sonrasında id input'unu sil
+                    modal.style.display = "none";
+                    fetchIncomes();
+                } else {
+                    const err = await res.json();
+                    const errorText = Array.isArray(err.detail)
+                        ? err.detail.map(e => `${e.loc.join(".")}: ${e.msg}`).join("\n")
+                        : err.detail || "Sunucu hatası.";
+                    alert("İşlem başarısız:\n" + errorText);
+                }
+
+            });
+        });
+        
+        async function fetchIncomes() {
+            const table = document.querySelector("table tbody") || document.querySelector("table").appendChild(document.createElement("tbody"));
+            table.innerHTML = "";
+        
+            const res = await fetch(apiUrl, {
+                headers: { "Authorization": `Bearer ${token}` }
+            });
+        
+            if (res.ok) {
+                const data = await res.json();
+                data.forEach(income => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${new Date(income.created_at).toLocaleDateString()}</td>
+                        <td>Gelir</td>
+                        <td>${income.category}</td>
+                        <td>${income.description}</td>
+                        <td>${income.amount.toFixed(2)} ₺</td>
+                        <td>
+                            <span class="material-symbols-outlined delete-btn" onclick="deleteIncome(${income.id})" title="Sil">delete</span>
+                            <span class="material-symbols-outlined edit-btn" onclick="editIncome(${income.id}, ${income.amount}, '${income.category}', '${income.description}', '${income.created_at}')" title="Güncelle">edit</span>
+                        </td>
+                    `;
+                    table.appendChild(row);
+                });
+            } else {
+                table.innerHTML = "<tr><td colspan='6'>Gelir bulunamadı.</td></tr>";
+            }
+        }
+        
+        function editIncome(id, amount, category, description, date) {
+            const form = document.querySelector("form");
+            const modal = document.querySelector(".modal");
+        
+            form.querySelector('input[type="number"]').value = amount;
+            form.querySelector("select").value = category;
+            form.querySelectorAll('input[type="text"]')[0].value = description;
+            form.querySelector('#income-date').value = new Date(date).toISOString().split("T")[0];
+        
+            let idInput = document.getElementById("income-id");
+            if (!idInput) {
+                idInput = document.createElement("input");
+                idInput.type = "hidden";
+                idInput.id = "income-id";
+                form.appendChild(idInput);
+            }
+            idInput.value = id;
+        
+            modal.style.display = "block";
+        }
+        
+        async function deleteIncome(id) {
+            if (!confirm("Bu işlemi silmek istediğinize emin misiniz?")) return;
+        
+            const res = await fetch(`${apiUrl}/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+        
+            if (res.ok) {
+                fetchIncomes();
+            } else {
+                alert("Silme işlemi başarısız.");
+            }
+        }
+        </script>
+        
+    
+    
+
 </body>
 </html>

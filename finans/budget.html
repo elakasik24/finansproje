@@ -4,37 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    
-  
-
     <link rel="stylesheet" href="css/style.css">
-     <!--Font-->
      <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-     
-
-     
-     
 </head>
 <body>
     <div class="grid-container">
-
-   <!--Header-->
     <header class="header">
     <div class="menu-icon" onclick="openSidebar()">
         <span class="material-symbols-outlined">menu</span>
     </div><span ></span>
     <div class="header-left">
-    <div class="header-right">
-        <button class="notper-button">
-            <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
-        </button>
-        
-    </div>
 </header>
-   <!--End Header-->
    <div class="notification-box" id="notificationBox">
     <h4>Bildirimler</h4>
     <ul>
@@ -44,8 +25,6 @@
         <li>Lorem ipsum istinctio magni</li>
     </ul>
 </div>
-
-   <!--Sidebar-->
    <aside id="sidebar">
    <div class="sidebar-title">
       <div class="sidebar-brand">
@@ -58,14 +37,10 @@
     <li class="sidebar-list-item">
         <a href="Index.html">
        <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
-    </a>
-    
+    </a>   
     </li>
-    <li class="sidebar-list-item">
-        <a href="islemler.html">
-      <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
-    </a>
-    </li>
+    <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+    <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
     <li class="sidebar-list-item">
         <a href="budget.html">
         <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
@@ -90,84 +65,55 @@
         <a href="ai.html">
         <span class="material-symbols-outlined">robot_2</span>AI
     </a>
-    </li>
-
-     
+    </li>    
     <li class="sidebar-list-item   cizgi">
         <a href="settings.html">
         <span class="material-symbols-outlined">settings</span>Ayarlar
     </a>
     </li>
-
-
     <li class="sidebar-list-item">
         <a href="Login.html">
             <span class="material-symbols-outlined">logout</span>Çıkış
     </a>
     </li>
-
    </ul>
 </aside>
-   <!--End Sidebar-->
-
-   <!--Main-->
     <main class="main-container">
         <div class="main-title">
             <p class="font-weight-bold"></p>
-        </div>
-      
+        </div>      
         <div class="transaction">
             <h2 class="table-box">BÜTÇE YÖNETİMİ </h2>
-
             <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>BÜTÇE EKLE</button>
-            <!--start açılıp kapanan form-->
-
-            <div class="modal">
-                
-                
+            <div class="modal">                              
                 <form>
                      <h3 id="modal-kapat">x</h3>
-
                      <label> Kullanıcı </label>
                      <input type="text" value="Kullanıcı" readonly>
-
                      <label >Kategori</label>
                      <select>
                          <option value="Market" selected>Market</option>
-                        <option value="Maaş" >Ulaşım</option>
-                        <option value="Freelance" selected>Eğlence</option>
-                        <option value="Borç" >Kira</option>
-                        <option value="sağlık">Sağlık</option>
-                        <option value="Restoran">Restoran & Kafe</option>
+                        <option value="Ulaşım" >Ulaşım</option>
+                        <option value="Eğlence" >Eğlence</option>
+                        <option value="Kira">Kira</option>
+                        <option value="Sağlık">Sağlık</option>
+                        <option value="Restoran & Kafe">Restoran & Kafe</option>
                         <option value="Kişisel Bakım">Kişisel Bakım</option>
                         <option value="Hobi">Hobi</option>
                         <option value="Teknoloji">Teknoloji</option>
                         <option value="Eğitim">Eğitim</option>
-                        <option value="Ev&Yaşam">Ev & Yaşam</option>
-                        <option value="Aile&Sosal">Aile&Sosyal Hayat</option>
-                        <option value="Borç">Borç</option>
+                        <option value="Ev & Yaşam">Ev & Yaşam</option>
+                        <option value="Aile & Sosyal Hayat">Aile & Sosyal Hayat</option>
                      </select>
-
-                    <label >Bütçe Tutarı</label>
-            
+                    <label >Bütçe Tutarı</label> 
                     <input type="number" value="301.8">
-                    
                     <label>Başlangıç Tarihi</label>
-                    <input type="date" value="2024-11-25" required>
-                
-
+                    <input type="date" value="2025-05-05" required>
                     <label >Bitiş Tarihi</label>
-                    <input type="date" value="2024-11-25">
-
-                    
-                    
-                   
-
+                    <input type="date" value="2025-05-05">
                     <button  class="form-btn">kaydet</button>
                 </form>
             </div>
-            
-         <!--end açılıp kapanan form-->
             <table>
     
                   <thead>
@@ -179,113 +125,157 @@
                         <th>Bitiş Tarihi</th>
                         <th>İşlemler</th>
                     
-                    </tr>
-    
+                    </tr> 
                   </thead>
-    
-                  <tbody>
-                      <tr>
-                           <td>Admin</td>
-                           <td>Market</td>
-                           <td>1200</td>
-                           <td>11.03.2020</td>
-                           <td>11.04.2020</td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                     </td>
-                   
-                      </tr>
-    
-                      <tr>
-                        <td>Admin</td>
-                           <td>Market</td>
-                           <td>1200</td>
-                           <td>11.03.2020</td>
-                           <td>11.04.2020</td>
-                           <td> <button class="delete-btn"> 
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
-                       <button class="edit-btn">
-                             <span class="material-symbols-outlined">published_with_changes</span>
-                      </button>
-                    </td>
-                   </tr>
-    
-                   <tr>
-                    <td>Admin</td>
-                    <td>Market</td>
-                    <td>1200</td>
-                    <td>11.03.2020</td>
-                    <td>11.04.2020</td>
-                    <td> <button class="delete-btn"> 
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                   <button class="edit-btn">
-                         <span class="material-symbols-outlined">published_with_changes</span>
-                  </button>
-                </td>
-                   
-               </tr>
-    
-               <tr>
-                <td>Admin</td>
-                <td>Market</td>
-                <td>1200</td>
-                <td>11.03.2020</td>
-                <td>11.04.2020</td>
-                <td> <button class="delete-btn"> 
-                    <span class="material-symbols-outlined">delete</span>
-                </button>
-               <button class="edit-btn">
-                     <span class="material-symbols-outlined">published_with_changes</span>
-              </button>
-             </td>
-                   
-           </tr>
-    
-           <tr>
-            <td>Admin</td>
-            <td>Market</td>
-            <td>1200</td>
-            <td>11.03.2020</td>
-            <td>11.04.2020</td>
-            <td> <button class="delete-btn"> 
-                <span class="material-symbols-outlined">delete</span>
-            </button>
-           <button class="edit-btn">
-                 <span class="material-symbols-outlined">published_with_changes</span>
-          </button>
-        </td>
-                   
-       </tr>
-    
-                  </tbody>
-            </table>
-                   
+            </table>                
         </div>
-    
-    
-
-
     </main>
-   <!--End Main-->
-
-
-
-
     </div>
-
-    <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
-
     <script src="js/scripts.js"></script>
+
+    <script>
+        const token = localStorage.getItem("access_token"); // JWT Token
+        let currentUsername = ""; // Giriş yapan kullanıcı adı burada tutulacak
+    
+        // 🟢 Giriş yapan kullanıcının adını al
+        async function fetchCurrentUser() {
+            const res = await fetch("http://localhost:8001/budget/me", {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+    
+            if (!res.ok) {
+                alert("Kullanıcı bilgisi alınamadı.");
+                return;
+            }
+    
+            const data = await res.json();
+            currentUsername = data.username;
+    
+            const userInput = document.querySelector("input[readonly]");
+            if (userInput) userInput.value = currentUsername;
+        }
+    
+        // 🟡 Bütçeleri Listele
+        async function fetchBudgets() {
+            const response = await fetch("http://localhost:8001/budget/budgets/", {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+    
+            if (!response.ok) {
+                alert("Bütçeler alınamadı.");
+                return;
+            }
+    
+            const data = await response.json();
+            const table = document.querySelector("table");
+    
+            const oldTbody = table.querySelector("tbody");
+            if (oldTbody) oldTbody.remove();
+    
+            const tbody = document.createElement("tbody");
+    
+            data.forEach(b => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${currentUsername}</td>
+                    <td>${b.name}</td>
+                    <td>${b.amount} ₺</td>
+                    <td>${new Date(b.start_date).toLocaleDateString()}</td>
+                    <td>${new Date(b.end_date).toLocaleDateString()}</td>
+                    <td>
+                        <span class="material-symbols-outlined delete-btn" onclick="deleteBudget(${b.id})" style="cursor:pointer;" title="Sil">delete</span>
+                        <span class="material-symbols-outlined edit-btn" onclick="editBudget(${b.id}, '${b.name}', ${b.amount}, '${b.end_date}')" style="cursor:pointer;;" title="Güncelle">edit</span>
+
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+    
+            table.appendChild(tbody);
+        }
+    
+        // 🟢 Form Kaydetme (Ekle veya Güncelle)
+        document.querySelector(".form-btn").addEventListener("click", async function (e) {
+            e.preventDefault();
+            const form = e.target.closest("form");
+            const name = form.querySelector("select").value;
+            const amount = form.querySelector("input[type='number']").value;
+            const end_date = form.querySelectorAll("input[type='date']")[1].value;
+    
+            const isEdit = e.target.dataset.editing === "true";
+            const url = isEdit
+                ? `http://localhost:8001/budget/budgets/${e.target.dataset.id}`
+                : "http://localhost:8001/budget/budgets/";
+            const method = isEdit ? "PUT" : "POST";
+    
+            const res = await fetch(url, {
+                method,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify({ name, amount: parseFloat(amount), end_date })
+            });
+    
+            if (res.ok) {
+                alert(isEdit ? "Güncellendi!" : "Eklendi!");
+                location.reload();
+            } else {
+                alert("İşlem başarısız.");
+            }
+        });
+    
+        // 🔴 Silme Fonksiyonu
+        async function deleteBudget(id) {
+            const res = await fetch(`http://localhost:8001/budget/budgets/${id}`, {
+                method: "DELETE",
+                headers: { Authorization: `Bearer ${token}` }
+            });
+    
+            if (res.ok) {
+                alert("Silindi");
+                location.reload();
+            } else {
+                alert("Silme başarısız");
+            }
+        }
+    
+        // 🔵 Güncelleme (Formu Doldur)
+        function editBudget(id, name, amount, end_date) {
+            const modal = document.querySelector(".modal");
+            const form = modal.querySelector("form");
+            modal.style.display = "block";
+    
+            form.querySelector("select").value = name;
+            form.querySelector("input[type='number']").value = amount;
+            form.querySelectorAll("input[type='date']")[1].value = end_date;
+    
+            const saveBtn = form.querySelector(".form-btn");
+            saveBtn.textContent = "Güncelle";
+            saveBtn.dataset.editing = "true";
+            saveBtn.dataset.id = id;
+        }
+    
+        // Modal kapatma
+        document.getElementById("modal-kapat").addEventListener("click", () => {
+            document.querySelector(".modal").style.display = "none";
+        });
+    
+        // Sayfa yüklenince çalışacaklar
+        document.addEventListener("DOMContentLoaded", async () => {
+            if (!token) {
+                alert("Giriş yapılmamış.");
+                return;
+            }
+    
+            await fetchCurrentUser();
+            await fetchBudgets();
+        });
+    </script>
+    
+        
+        
 </body>
 </html>

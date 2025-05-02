@@ -4,37 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    
-  
-
     <link rel="stylesheet" href="css/style.css">
-     <!--Font-->
      <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-    
-
-     
-     
 </head>
 <body>
     <div class="grid-container">
-
-   <!--Header-->
     <header class="header">
     <div class="menu-icon" onclick="openSidebar()">
         <span class="material-symbols-outlined">menu</span>
     </div><span ></span>
     <div class="header-left">
-    <div class="header-right">
-        <button class="notper-button">
-            <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
-        </button>
-        
-    </div>
 </header>
-   <!--End Header-->
    <div class="notification-box" id="notificationBox">
     <h4>Bildirimler</h4>
     <ul>
@@ -44,8 +25,6 @@
         <li>Lorem ipsum istinctio magni</li>
     </ul>
 </div>
-
-   <!--Sidebar-->
    <aside id="sidebar">
    <div class="sidebar-title">
       <div class="sidebar-brand">
@@ -59,13 +38,9 @@
         <a href="Index.html">
        <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
     </a>
-    
     </li>
-    <li class="sidebar-list-item">
-        <a href="islemler.html">
-      <span class="material-symbols-outlined">payments</span>Gelir & Gider İşlemler
-    </a>
-    </li>
+    <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+    <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
     <li class="sidebar-list-item">
         <a href="budget.html">
         <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
@@ -91,8 +66,6 @@
         <span class="material-symbols-outlined">robot_2</span>AI
     </a>
     </li>
-
-     
     <li class="sidebar-list-item   cizgi">
         <a href="settings.html">
         <span class="material-symbols-outlined">settings</span>Ayarlar
@@ -104,64 +77,72 @@
             <span class="material-symbols-outlined">logout</span>Çıkış
     </a>
     </li>
-
-
    </ul>
 </aside>
-   <!--End Sidebar-->
-
-   <!--Main-->
-  
 <div class="setting-container">
         <form class="account">
             <div class="account-header">
-                <h2 class="account-title">Hesap Ayarları</h2>
-                <div class="btn-container">
-                    <button class="btn-cancel">Kaydet</button>
-                </div>
+                <h2 class="account-title">HESAP BİLGİLERİ</h2>
             </div>
-
-
          <div class="account-edit">
             <div class="input-container">
                 <label>Kullanıcı Adı</label>
-                <input type="text" placeholder="Kullanıcı Adı">
+                <input type="text" id="username" placeholder="Kullanıcı Adı" readonly>
             </div>
          </div>
-
          <div class="account-edit">
             <div class="input-container">
                 <label>Email</label>
-                <input type="email" placeholder="Email">
+                <input type="email" id="email" placeholder="Email" readonly >
             </div>
          </div>
-
-         <div class="account-edit">
-            <div class="input-container">
-                <label>Şifre</label>
-                <input type="password" placeholder="Şifre">
-            </div>
-         </div>
-
         </form>
-    
-    
-
-
-  
-
-
-
     </div>
     </div>
-
-    <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
-
     <script src="js/scripts.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const usernameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+
+    // Kullanıcı bilgilerini API'den al
+    async function fetchUserInfo() {
+        const token = localStorage.getItem("access_token"); // Token'ı yerel depolamadan al
+
+        if (!token) {
+            alert("Kullanıcı doğrulaması yapılmadı!");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:8001/auth/user-info", {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Kullanıcı bilgileri alınamadı");
+            }
+
+            const data = await response.json();
+            // Kullanıcı bilgilerini inputlara yerleştir
+            usernameInput.value = data.username;
+            emailInput.value = data.email;
+
+        } catch (error) {
+            console.error("API Hatası:", error);
+        }
+    }
+
+    // Sayfa yüklendiğinde kullanıcı bilgilerini çek
+    fetchUserInfo();
+});
+
+    </script>
 </body>
 </html>

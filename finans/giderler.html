@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İŞLEMLER</title>   
+    <link rel="stylesheet" href="css/style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">  
+</head>
+<body>
+    <div class="grid-container">
+    <header class="header">
+    <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-symbols-outlined">menu</span>
+    </div><span ></span>
+    <div class="header-left">
+</header>
+   <div class="notification-box" id="notificationBox">
+    <h4>Bildirimler</h4>
+    <ul>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+        <li>Lorem ipsum istinctio magni</li>
+    </ul>
+</div>
+   <aside id="sidebar">
+   <div class="sidebar-title">
+      <div class="sidebar-brand">
+        <span class="material-symbols-outlined">finance</span>
+         <span>CepFinans</span>
+      </div>
+      <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
+   </div>
+   <ul class="sidebar-list">
+    <li class="sidebar-list-item">
+        <a href="Index.html">
+       <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard 
+    </a>
+    </li>
+    <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+    <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
+    <li class="sidebar-list-item">
+        <a href="budget.html">
+        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="debt.html">
+        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="abone.html">
+        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="fnshedef.html">
+        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
+    </a>
+    </li>
+    <li class="sidebar-list-item">
+        <a href="ai.html">
+        <span class="material-symbols-outlined">robot_2</span>AI
+    </a>
+    </li>    
+    <li class="sidebar-list-item   cizgi">
+        <span class="material-symbols-outlined">settings</span>Ayarlar
+    </li>
+    <li class="sidebar-list-item">
+        <a href="Login.html">
+            <span class="material-symbols-outlined">logout</span>Çıkış
+    </a>
+    </li>
+   </ul>
+
+
+</aside>
+    <main class="main-container">
+        <div class="main-title">
+        </div>
+      
+        <div class="transaction">
+            <h2 class="table-box">GİDER İŞLEMLERİ </h2>
+
+            <button id="open-btn" class="open-btn"><span class="material-symbols-outlined">add_circle</span>İŞLEM EKLE</button>
+            <div class="modal">
+                <form id="expense-form">
+                    <h3 id="modal-kapat">x</h3>
+                    <input type="hidden" id="expense-id">
+                    <label> Tutar </label>
+                    <input type="number" value="301.8" step="any">
+                    <label >Tarih</label>
+                    <input type="date" id="expense-date" name="date" required>
+                    <label >Açıklama</label>
+                    <input type="text" value="Gross Market">
+                    <label>İşlem Türü</label>
+                    <input type="text" value="Gider" id="expense-tür" class="expense-tür" readonly>
+                    <label >Kategori</label>
+                    <select>
+                        <option value="Market" selected>Market</option>
+                        <option value="Ulaşım" >Ulaşım</option>
+                        <option value="Eğlence" selected>Eğlence</option>
+                        <option value="Kira" >Kira</option>
+                        <option value="Fatura">Fatura</option>
+                        <option value="Sağlık">Sağlık</option>
+                        <option value="Restoran">Restoran</option>
+                        <option value="Kişisel bakım">Kişisel bakım</option>
+                        <option value="Hobi">Hobi</option>
+                        <option value="Teknoloji">Teknoloji</option>
+                        <option value="Ev & Yaşam">Ev & Yaşam</option>
+                        <option value="Abonelik">Abonelik</option>
+                        <option value="Alışveriş">Alışveriş</option>
+
+                    </select>
+                    <button  class="form-btn">kaydet</button>
+                </form>
+            </div>
+            <table>
+                  <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>İşlem Türü</th>
+                        <th>Kategori</th>
+                        <th>Açıklama</th>
+                        <th>Tutar</th>
+                        <th>İşlemler</th>
+                    </tr>
+                  </thead>
+                    <tbody id="expense-table-body"></tbody>                  
+            </table>
+        </div>
+    <div class="main-title">
+        <p class="font-weight-bold"></p>
+    </div>
+    </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
+
+    <script>
+        const expenseApiUrl = "http://localhost:8001/expense";
+        const token = localStorage.getItem("access_token");
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchExpenses();
+    
+            const form = document.getElementById("expense-form");
+            const modal = document.querySelector(".modal");
+            const openBtn = document.getElementById("open-btn");
+            const closeBtn = document.getElementById("modal-kapat");
+
+    
+            openBtn.addEventListener("click", () => {
+                form.reset();
+                document.getElementById("expense-id")?.remove(); // varsa eski ID input'unu sil
+                modal.style.display = "block";
+            });
+    
+            closeBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+    
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+    
+                const idInput = document.getElementById("expense-id");
+                const id = idInput ? idInput.value : "";
+    
+                const amount = parseFloat(form.querySelector('input[type="number"]').value);
+                const description = form.querySelectorAll('input[type="text"]')[0].value.trim();
+                const date = document.getElementById("expense-date").value;
+                const category = form.querySelector("select").value;
+    
+                if (isNaN(amount) || !description || !date || !category) {
+                    alert("Lütfen tüm alanları eksiksiz doldurun.");
+                    return;
+                }
+    
+                const expenseData = {
+                    amount,
+                    category,
+                    description,
+                    date
+                };
+    
+                const isUpdate = id !== "";
+    
+                const res = await fetch(isUpdate ? `${expenseApiUrl}/${id}` : expenseApiUrl, {
+                    method: isUpdate ? "PUT" : "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(expenseData)
+                });
+    
+                if (res.ok) {
+                    form.reset();
+                    if (idInput) idInput.remove();
+                    modal.style.display = "none";
+                    fetchExpenses();
+                } else {
+                    const err = await res.json();
+                    const errorText = Array.isArray(err.detail)
+                        ? err.detail.map(e => `${e.loc.join(".")}: ${e.msg}`).join("\n")
+                        : err.detail || "Sunucu hatası.";
+                    alert("İşlem başarısız:\n" + errorText);
+                }
+            });
+        });
+    
+        async function fetchExpenses() {
+            const table = document.getElementById("expense-table-body");
+            table.innerHTML = "";
+    
+            const res = await fetch(expenseApiUrl, {
+                headers: { "Authorization": `Bearer ${token}` }
+            });
+    
+            if (res.ok) {
+                const data = await res.json();
+                data.forEach(expense => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${new Date(expense.created_at).toLocaleDateString()}</td>
+                        <td>Gider</td>
+                        <td>${expense.category}</td>
+                        <td>${expense.description}</td>
+                        <td>${expense.amount.toFixed(2)} ₺</td>
+                        <td>
+                            <span class="material-symbols-outlined delete-btn" onclick="deleteExpense(${expense.id})" title="Sil">delete</span>
+                            <span class="material-symbols-outlined edit-btn" onclick="editExpense(${expense.id}, ${expense.amount}, '${expense.category}', '${expense.description}', '${expense.created_at}')" title="Güncelle">edit</span>
+                        </td>
+                    `;
+                    table.appendChild(row);
+                });
+            } else {
+                table.innerHTML = "<tr><td colspan='6'>Gider bulunamadı.</td></tr>";
+            }
+        }
+    
+        function editExpense(id, amount, category, description, date) {
+            const form = document.getElementById("expense-form");
+            const modal = document.querySelector(".modal");
+    
+            form.querySelector('input[type="number"]').value = amount;
+            form.querySelector("select").value = category;
+            form.querySelectorAll('input[type="text"]')[0].value = description;
+            form.querySelector("#expense-date").value = new Date(date).toISOString().split("T")[0];
+    
+            let idInput = document.getElementById("expense-id");
+            if (!idInput) {
+                idInput = document.createElement("input");
+                idInput.type = "hidden";
+                idInput.id = "expense-id";
+                form.appendChild(idInput);
+            }
+            idInput.value = id;
+    
+            modal.style.display = "block";
+        }
+    
+        async function deleteExpense(id) {
+            if (!confirm("Bu gider kaydını silmek istediğinize emin misiniz?")) return;
+    
+            const res = await fetch(`${expenseApiUrl}/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+    
+            if (res.ok) {
+                fetchExpenses();
+            } else {
+                alert("Silme işlemi başarısız.");
+            }
+        }
+    </script>
+    
+        
+    
+    
+
+</body>
+</html>
