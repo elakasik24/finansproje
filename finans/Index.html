@@ -81,6 +81,42 @@
    </ul>
 </aside>
     <main class="main-container">
+        <div class="main-dateinput">
+            <label >Yıl</label>
+            <input class="date-input2" type="number" value="2025" min="2000" max="3000">
+        </div>        
+        <div class="main-cards">
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">YILLIK BÜTÇE</p>
+                    <span class="material-symbols-outlined">currency_lira</span>
+                </div>
+                <span class="text-primary font-weight-bold" id="total_budget2">249</span>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">YILLIK GELİR</p>
+                    <span class="material-symbols-outlined">universal_currency_alt</span>
+                </div>
+                <span class="text-primary font-weight-bold" id="total_income2">29</span>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">YILLIK GİDER</p>
+                    <span class="material-symbols-outlined">payments</span>
+                </div>
+                <span class="text-primary font-weight-bold" id="total_expense2">24</span>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">YILLIK BORÇLAR</p>
+                    <span class="material-symbols-outlined text-red">report</span>
+                </div>
+                <span class="text-primary font-weight-bold" id="total_debt2">49</span>
+            </div>
+            
+        </div>
+
         <div class="main-title">
             <p class="font-weight-bold"></p>
         </div>
@@ -91,28 +127,28 @@
         <div class="main-cards">
             <div class="card">
                 <div class="card-inner">
-                    <p class="text-primary">BÜTÇE</p>
+                    <p class="text-primary">AYLIK BÜTÇE</p>
                     <span class="material-symbols-outlined">currency_lira</span>
                 </div>
                 <span class="text-primary font-weight-bold" id="total_budget">249</span>
             </div>
             <div class="card">
                 <div class="card-inner">
-                    <p class="text-primary">GELİR</p>
+                    <p class="text-primary">AYLIK GELİR</p>
                     <span class="material-symbols-outlined">universal_currency_alt</span>
                 </div>
                 <span class="text-primary font-weight-bold" id="total_income">29</span>
             </div>
             <div class="card">
                 <div class="card-inner">
-                    <p class="text-primary">GİDER</p>
+                    <p class="text-primary">AYLIK GİDER</p>
                     <span class="material-symbols-outlined">payments</span>
                 </div>
                 <span class="text-primary font-weight-bold" id="total_expense">24</span>
             </div>
             <div class="card">
                 <div class="card-inner">
-                    <p class="text-primary">BORÇLAR</p>
+                    <p class="text-primary">AYLIK BORÇLAR</p>
                     <span class="material-symbols-outlined text-red">report</span>
                 </div>
                 <span class="text-primary font-weight-bold" id="total_debt">49</span>
@@ -200,6 +236,60 @@
                 }
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const dateInput = document.querySelector(".date-input2");
+        if (dateInput) {
+            const currentDate = new Date();
+            const formattedYear = currentDate.getFullYear();  // Yıl bilgisi
+            dateInput.value = formattedYear;  // Yıl input alanına yıl bilgisi yerleştirildi
+        } else {
+            console.error("Tarih input alanı bulunamadı");
+        }
+
+        const fetchData = async (yil) => {
+            try {
+                const token = localStorage.getItem('access_token');
+                const response = await fetch(`http://localhost:8001/dashboard/yearly_summary?yil=${yil}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data);
+
+                    document.querySelector("#total_income2").innerText = data.total_income;
+                    document.querySelector("#total_expense2").innerText = data.total_expense;
+                    document.querySelector("#total_budget2").innerText = data.total_budget;
+                    document.querySelector("#total_debt2").innerText = data.total_debt;
+                } else {
+                    throw new Error('API çağrısı başarısız');
+                }
+            } catch (error) {
+                console.error("API çağrısı sırasında bir hata oluştu: " + error.message);
+                alert("API çağrısı sırasında bir hata oluştu.");
+            }
+        };
+
+        // Yıl değiştiğinde tekrar veri çek
+        if (dateInput) {
+            dateInput.addEventListener("change", function () {
+                const selectedYear = dateInput.value;
+                if (selectedYear) {
+                    fetchData(selectedYear);  // Yıl bilgisi ile API'yi çağır
+                }
+            });
+
+            // Sayfa açıldığında otomatik veri çek
+            if (dateInput.value) {
+                fetchData(dateInput.value);  // Sayfa yüklendiğinde veri çek
+            }
+        }
+    });
+
 
         document.addEventListener("DOMContentLoaded", function () {
         const dateInput = document.querySelector(".date-input");
