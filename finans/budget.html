@@ -141,7 +141,7 @@
     
         // 🟢 Giriş yapan kullanıcının adını al
         async function fetchCurrentUser() {
-            const res = await fetch("http://localhost:8001/budget/me", {
+            const res = await fetch("http://localhost:8000/budget/me", {
                 headers: { Authorization: `Bearer ${token}` }
             });
     
@@ -159,7 +159,7 @@
     
         // 🟡 Bütçeleri Listele
         async function fetchBudgets() {
-            const response = await fetch("http://localhost:8001/budget/budgets/", {
+            const response = await fetch("http://localhost:8000/budget/budgets/", {
                 headers: { Authorization: `Bearer ${token}` }
             });
     
@@ -206,8 +206,8 @@
     
             const isEdit = e.target.dataset.editing === "true";
             const url = isEdit
-                ? `http://localhost:8001/budget/budgets/${e.target.dataset.id}`
-                : "http://localhost:8001/budget/budgets/";
+                ? `http://localhost:8000/budget/budgets/${e.target.dataset.id}`
+                : "http://localhost:8000/budget/budgets/";
             const method = isEdit ? "PUT" : "POST";
     
             const res = await fetch(url, {
@@ -229,7 +229,7 @@
     
         // 🔴 Silme Fonksiyonu
         async function deleteBudget(id) {
-            const res = await fetch(`http://localhost:8001/budget/budgets/${id}`, {
+            const res = await fetch(`http://localhost:8000/budget/budgets/${id}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` }
             });

@@ -110,7 +110,7 @@
     
         async function fetchUser() {
             try {
-                const res = await fetch('http://127.0.0.1:8001/subscriptions/me', {
+                const res = await fetch('http://127.0.0.1:8000/subscriptions/me', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const data = await res.json();
@@ -133,7 +133,7 @@
         });
     
         async function fetchSubscriptions() {
-            const res = await fetch('http://127.0.0.1:8001/subscriptions/', {
+            const res = await fetch('http://127.0.0.1:8000/subscriptions/', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -165,7 +165,7 @@
             document.querySelectorAll('.delete-btn').forEach(btn => {
                 btn.addEventListener('click', async () => {
                     const id = btn.getAttribute('data-id');
-                    await fetch(`http://127.0.0.1:8001/subscriptions/${id}`, {
+                    await fetch(`http://127.0.0.1:8000/subscriptions/${id}`, {
                         method: 'DELETE',
                         headers: { 'Authorization': `Bearer ${token}` }
                     });
@@ -195,8 +195,8 @@
     
             const method = updateId ? 'PUT' : 'POST';
             const url = updateId 
-                ? `http://127.0.0.1:8001/subscriptions/${updateId}` 
-                : 'http://127.0.0.1:8001/subscriptions/';
+                ? `http://127.0.0.1:8000/subscriptions/${updateId}` 
+                : 'http://127.0.0.1:8000/subscriptions/';
     
             try {
                 const res = await fetch(url, {

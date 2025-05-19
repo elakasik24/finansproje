@@ -1,213 +1,622 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    
-  
-
+    <title>AI Finansal Analiz</title>
     <link rel="stylesheet" href="css/style.css">
-     <!--Font-->
-     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <!-- Metaeryal icon-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-     
-     
-
-     
-     
+    <!--Font-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Material icon-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <div class="grid-container">
+        <!--Header-->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+            <span></span>
+            <div class="header-left"></div>
+        </header>
+        <!--End Header-->
 
-   <!--Header-->
-    <header class="header">
-    <div class="menu-icon" onclick="openSidebar()">
-        <span class="material-symbols-outlined">menu</span>
-    </div><span ></span>
-    <div class="header-left">
-</header>
-   <!--End Header-->
-   <div class="notification-box" id="notificationBox">
-    <h4>Bildirimler</h4>
-    <ul>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-        <li>Lorem ipsum istinctio magni</li>
-    </ul>
-</div>
+        <!--Sidebar-->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-symbols-outlined">finance</span>
+                    <span>CepFinans</span>
+                </div>
+                <span class="material-symbols-outlined" onclick="closeSidebar()">cancel</span>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="Index.html">
+                        <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item"><a href="islemler.html"><span
+                            class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+                <li class="sidebar-list-item"><a href="giderler.html"><span
+                            class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
+                <li class="sidebar-list-item">
+                    <a href="budget.html">
+                        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="debt.html">
+                        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="abone.html">
+                        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="fnshedef.html">
+                        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
+                    </a>
+                </li>
+                <li class="sidebar-list-item active">
+                    <a href="ai.html">
+                        <span class="material-symbols-outlined">robot_2</span>AI
+                    </a>
+                </li>
+                <li class="sidebar-list-item cizgi">
+                    <a href="settings.html">
+                        <span class="material-symbols-outlined">settings</span>Ayarlar
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="Login.html">
+                        <span class="material-symbols-outlined">logout</span>Çıkış
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!--End Sidebar-->
 
-   <!--Sidebar-->
-   <aside id="sidebar">
-   <div class="sidebar-title">
-      <div class="sidebar-brand">
-        <span class="material-symbols-outlined">finance</span>
-         <span>CepFinans</span>
-      </div>
-      <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
-   </div>
-   <ul class="sidebar-list">
-    <li class="sidebar-list-item">
-        <a href="Index.html">
-       <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
-    </a>
-    
-    </li>
-    <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
-    <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
-    <li class="sidebar-list-item">
-        <a href="budget.html">
-        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="debt.html">
-        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="abone.html">
-        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="fnshedef.html">
-        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="ai.html">
-        <span class="material-symbols-outlined">robot_2</span>AI
-        </a>
-    </li>
+        <!--Main-->
+        <main class="main-container">
+            <div class="main-title">
+                <h2>Yapay Zeka Finansal Analiz</h2>
+            </div>
 
-     
-    <li class="sidebar-list-item   cizgi">
-        <a href="settings.html">
-        <span class="material-symbols-outlined">settings</span>Ayarlar
-    </a>
-    </li>
+            <div class="ai-container">
+                <div class="ai-section">
+                    <h3><span class="material-symbols-outlined">trending_up</span> Aylık Gider Karşılaştırması</h3>
+                    <div class="chart-container">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kategori</th>
+                                    <th>Bu Ay</th>
+                                    <th>Geçen Ay</th>
+                                    <th>Fark (TL)</th>
+                                    <th>Fark (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comparisonData">
+                                <!-- Data will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
+                <div class="ai-section">
+                    <h3><span class="material-symbols-outlined">psychology</span> Gelecek Ay Tahmini</h3>
+                    <div class="prediction-container">
+                        <div class="prediction-chart">
+                            <canvas id="predictionChart"></canvas>
+                        </div>
+                        <div class="prediction-summary">
+                            <div class="prediction-card">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                                <h4>Gelecek Ay Tahmini</h4>
+                                <p class="prediction-amount" id="nextMonthPrediction">-</p>
+                                <p class="prediction-confidence">%75 güven düzeyi</p>
+                            </div>
+                            <div class="prediction-card">
+                                <span class="material-symbols-outlined">show_chart</span>
+                                <h4>Ortalama Harcama</h4>
+                                <p class="prediction-amount" id="averageSpending">-</p>
+                                <p class="prediction-note">Son 3 aylık ortalama</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <li class="sidebar-list-item">
-        <a href="Login.html">
-            <span class="material-symbols-outlined">logout</span>Çıkış
-    </a>
-    </li>
-
-   </ul>
-</aside>
-   <!--End Sidebar-->
-
-   <!--Main-->
-    <main class="main-container">
-        <div class="main-title">
-            <p class="font-weight-bold"></p>
-        </div>
-      
-        <div class="transaction">
-            <h2 class="table-box">Yapay Zeka</h2>
-
-            
-            <!--start açılıp kapanan form-->
-
-            
-            <table>
-    
-                  <thead>
-                    <tr>
-                        <th>AI</th>
-                        <th>Kullanıcı</th>
-                        <th>Tahmin Türü</th>
-                        <th>Tahmin Sonucu</th>
-                        <th>Tahmin Tarihi</th>
-                        <th>Güven Düzeyi</th>
-                        
-                    
-                    </tr>
-    
-                  </thead>
-    
-                  <tbody>
-                      <tr>
-                           <td>1</td>
-                           <td>Admin</td>
-                           <td>Gelir</td>
-                           <td>lorem</td>
-                           <td>11.04.2020</td>
-                           <td>%70</td>
-                           
-                   
-                      </tr>
-    
-                      <tr>
-                        <td>2</td>
-                           <td>Admin</td>
-                           <td>Gider</td>
-                           <td>lorem</td>
-                           <td>11.04.2020</td>
-                           <td>%40</td>
-                           
-                   </tr>
-    
-                   <tr>
-                    <td>3</td>
-                    <td>Admin</td>
-                    <td>Borç</td>
-                    <td>lorem</td>
-                    <td>11.04.2020</td>
-                    <td>%40</td>
-                    
-                   
-               </tr>
-    
-               <tr>
-                <td>4</td>
-                <td>Admin</td>
-                <td>Bütçe</td>
-                <td>lorem</td>
-                <td>11.04.2020</td>
-                <td>%40</td>
-               
-                   
-           </tr>
-    
-           <tr>
-            <td>5</td>
-            <td>Admin</td>
-            <td>Gider</td>
-            <td>lorem</td>
-            <td>11.04.2020</td>
-            <td>%40</td>
-            
-                   
-       </tr>
-    
-                  </tbody>
-            </table>
-                   
-        </div>
-    
-    
-
-
-    </main>
-   <!--End Main-->
-
-
-
-
+                <div class="ai-section">
+                    <h3><span class="material-symbols-outlined">recommend</span> Tasarruf Önerileri</h3>
+                    <div class="recommendations" id="recommendations">
+                        <!-- Recommendations will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--End Main-->
     </div>
 
-    <!-- sCRİPTS-->
-    <!-- APEXCHARTS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <!-- CUSTOM CS-->
-    <!--chartjs-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
+ <script>
+        // Function to show error message
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <span class="material-symbols-outlined">error</span>
+                <p>${message}</p>
+            `;
+            document.querySelector('.main-container').prepend(errorDiv);
+            setTimeout(() => errorDiv.remove(), 5000);
+        }
 
-    <script src="js/scripts.js"></script>
+        // Function to format money
+        function formatMoney(amount) {
+            return new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(amount);
+        }
+
+        // Function to calculate percentage change
+        function calculatePercentageChange(current, previous) {
+            if (previous === 0) return 100;
+            return ((current - previous) / previous) * 100;
+        }
+
+        // Function to get month name
+        function getMonthName(monthIndex) {
+            const months = [
+                "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
+            ];
+            return months[monthIndex];
+        }
+
+        // Function to get formatted date string (YYYY-MM)
+        function getFormattedDate(year, month) {
+            return `${year}-${String(month + 1).padStart(2, '0')}`;
+        }
+
+        // Simple prediction function (no machine learning)
+        function predictNextMonth(current, previous) {
+            // Simple weighted average (60% current month, 40% previous month)
+            return Math.round((current * 0.6 + previous * 0.4) * 1.05); // 5% increase
+        }
+
+        // Function to render comparison table
+        function renderComparisonTable(categories, currentAmounts, prevAmounts, differences, percentageChanges) {
+            const tableBody = document.getElementById('comparisonData');
+            tableBody.innerHTML = '';
+            
+            categories.forEach((cat, i) => {
+                const row = document.createElement('tr');
+                
+                // Highlight significant changes
+                let changeClass = '';
+                if (Math.abs(percentageChanges[i]) > 20) {
+                    changeClass = percentageChanges[i] > 0 ? 'increase' : 'decrease';
+                }
+                
+                row.innerHTML = `
+                    <td>${cat}</td>
+                    <td>${formatMoney(currentAmounts[i])}</td>
+                    <td>${formatMoney(prevAmounts[i])}</td>
+                    <td class="${changeClass}">${formatMoney(differences[i])}</td>
+                    <td class="${changeClass}">${percentageChanges[i].toFixed(1)}%</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to generate predictions
+        function generatePredictions(categories, currentAmounts, prevAmounts) {
+            // Calculate total predicted spending
+            const totalCurrent = currentAmounts.reduce((sum, amount) => sum + amount, 0);
+            const totalPrev = prevAmounts.reduce((sum, amount) => sum + amount, 0);
+            const predictedTotal = predictNextMonth(totalCurrent, totalPrev);
+            
+            // Calculate confidence score (simple heuristic)
+            const variance = Math.abs(totalCurrent - totalPrev) / Math.max(totalCurrent, totalPrev);
+            const confidence = Math.max(50, Math.min(90, 75 - (variance * 100)));
+            
+            // Update UI
+            document.getElementById('nextMonthPrediction').textContent = formatMoney(predictedTotal);
+            document.getElementById('averageSpending').textContent = formatMoney((totalCurrent + totalPrev) / 2);
+            document.querySelector('.prediction-confidence').textContent = `%${Math.round(confidence)} güven düzeyi`;
+        }
+
+        // Function to generate smart recommendations
+        function generateRecommendations(categories, currentAmounts, prevAmounts, differences, percentageChanges) {
+            const recommendationsContainer = document.getElementById('recommendations');
+            recommendationsContainer.innerHTML = '';
+            
+            // Calculate totals
+            const totalCurrent = currentAmounts.reduce((sum, amount) => sum + amount, 0);
+            const totalPrev = prevAmounts.reduce((sum, amount) => sum + amount, 0);
+            const totalChange = calculatePercentageChange(totalCurrent, totalPrev);
+            
+            // Find top spending categories
+            const categorySpending = categories.map((category, i) => ({
+                category,
+                amount: currentAmounts[i],
+                change: percentageChanges[i]
+            }));
+            
+            const topSpendingCategories = [...categorySpending]
+                .sort((a, b) => b.amount - a.amount)
+                .slice(0, 3);
+            
+            // Find categories with significant increases
+            const significantIncreases = categorySpending
+                .filter(item => item.change > 30 && item.amount > 500);
+            
+            // Generate recommendations
+            const recommendations = [];
+            
+            // 1. Overall spending trend
+            if (totalChange > 15) {
+                recommendations.push({
+                    icon: 'trending_up',
+                    title: 'Harcamalarınız Artıyor',
+                    content: `Toplam harcamalarınız geçen aya göre %${totalChange.toFixed(1)} arttı. Bu trend devam ederse bütçeniz üzerinde baskı oluşabilir.`
+                });
+            }
+            
+            // 2. Significant increases
+            significantIncreases.forEach(item => {
+                recommendations.push({
+                    icon: 'warning',
+                    title: `${item.category} Harcamalarında Artış`,
+                    content: `${item.category} harcamalarınız geçen aya göre %${item.change.toFixed(1)} arttı (${formatMoney(item.amount)}). Bu artışın nedenini inceleyin.`
+                });
+            });
+            
+            // 3. Top spending categories
+            topSpendingCategories.forEach(item => {
+                if (item.amount > 1000) {
+                    const percentage = ((item.amount / totalCurrent) * 100).toFixed(1);
+                    recommendations.push({
+                        icon: 'insights',
+                        title: `Büyük Harcama: ${item.category}`,
+                        content: `${item.category} harcamalarınız ${formatMoney(item.amount)} ile toplam harcamalarınızın %${percentage}'ini oluşturuyor.`
+                    });
+                }
+            });
+            
+            // 4. General smart recommendations
+            const generalTips = [
+                {
+                    icon: 'local_grocery_store',
+                    title: 'Market Alışverişi İpuçları',
+                    content: 'Haftalık yemek planı yapın ve liste dışına çıkmayın. Toplu alımla %15-20 tasarruf sağlayabilirsiniz.'
+                },
+                {
+                    icon: 'subscriptions',
+                    title: 'Abonelik Kontrolü',
+                    content: 'Kullanmadığınız abonelikleri iptal edin. Ortalama bir kullanıcı ayda 3-4 kullanmadığı abonelik ödüyor.'
+                },
+                {
+                    icon: 'savings',
+                    title: 'Tasarruf Hedefi',
+                    content: 'Gelirinizin en az %10\'unu tasarruf etmeyi hedefleyin. Küçük başlayıp zamanla artırın.'
+                },
+                {
+                    icon: 'receipt_long',
+                    title: 'Fatura Analizi',
+                    content: 'Faturalarınızı düzenli kontrol edin. Aynı hizmeti daha uygun fiyatla sunan alternatifler olabilir.'
+                }
+            ];
+            
+            // Add recommendations to DOM (minimum 4)
+            [...recommendations, ...generalTips].slice(0, 4).forEach(rec => {
+                const recElement = document.createElement('div');
+                recElement.className = 'recommendation-card';
+                recElement.innerHTML = `
+                    <span class="material-symbols-outlined">${rec.icon}</span>
+                    <div class="recommendation-content">
+                        <h4>${rec.title}</h4>
+                        <p>${rec.content}</p>
+                    </div>
+                `;
+                recommendationsContainer.appendChild(recElement);
+            });
+        }
+
+        // Current date
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const currentYear = currentDate.getFullYear();
+        
+        // Previous month
+        let prevMonth = currentMonth - 1;
+        let prevYear = currentYear;
+        if (prevMonth < 0) {
+            prevMonth = 11;
+            prevYear--;
+        }
+
+        // Fetch category data from API
+        async function fetchCategoryDataByMonth(year, month) {
+            const formattedDate = getFormattedDate(year, month);
+            try {
+                const token = localStorage.getItem("access_token");
+                if (!token) {
+                    throw new Error("Oturum açılmamış. Lütfen tekrar giriş yapın.");
+                }
+                
+                const response = await fetch(`http://localhost:8000/dashboard/category-expense?ay=${formattedDate}`, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.message || `API hatası: ${response.status} ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                return data.veriler || [];
+            } catch (error) {
+                console.error(`Kategori harcama verileri alınamadı (${formattedDate}):`, error);
+                showError(`${formattedDate} verileri alınamadı: ${error.message}`);
+                return [];
+            }
+        }
+
+        // Main data fetching function
+        async function fetchData() {
+            try {
+                // Show loading state
+                document.getElementById('comparisonData').innerHTML = `
+                    <tr>
+                        <td colspan="5" class="loading-text">
+                            <span class="material-symbols-outlined spin">progress_activity</span>
+                            Veriler yükleniyor...
+                        </td>
+                    </tr>
+                `;
+                
+                // Fetch current and previous month data in parallel
+                const [currentMonthData, prevMonthData] = await Promise.all([
+                    fetchCategoryDataByMonth(currentYear, currentMonth),
+                    fetchCategoryDataByMonth(prevYear, prevMonth)
+                ]);
+                
+                // Check if we got any data
+                if (currentMonthData.length === 0 && prevMonthData.length === 0) {
+                    throw new Error("Hiç veri alınamadı. Lütfen daha sonra tekrar deneyin.");
+                }
+
+                // Process data for comparison
+                const allCategories = Array.from(
+                    new Set([
+                        ...currentMonthData.map(item => item.kategori),
+                        ...prevMonthData.map(item => item.kategori)
+                    ])
+                );
+
+                // Create maps for easy lookup
+                const currentMap = new Map(currentMonthData.map(item => [item.kategori, item.miktar]));
+                const prevMap = new Map(prevMonthData.map(item => [item.kategori, item.miktar]));
+
+                // Prepare data for tables
+                const categories = allCategories;
+                const currentAmounts = categories.map(cat => currentMap.get(cat) || 0);
+                const prevAmounts = categories.map(cat => prevMap.get(cat) || 0);
+                const differences = currentAmounts.map((curr, i) => curr - prevAmounts[i]);
+                const percentageChanges = currentAmounts.map((curr, i) => calculatePercentageChange(curr, prevAmounts[i]));
+
+                // Render comparison table
+                renderComparisonTable(categories, currentAmounts, prevAmounts, differences, percentageChanges);
+                
+                // Generate predictions
+                generatePredictions(categories, currentAmounts, prevAmounts);
+                
+                // Generate recommendations
+                generateRecommendations(categories, currentAmounts, prevAmounts, differences, percentageChanges);
+                
+            } catch (error) {
+                console.error('Veri işleme hatası:', error);
+                showError(`Veri işleme hatası: ${error.message}`);
+                
+                // Show empty state
+                document.getElementById('comparisonData').innerHTML = `
+                    <tr>
+                        <td colspan="5" class="error-text">
+                            <span class="material-symbols-outlined">error</span>
+                            ${error.message}
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            if (!localStorage.getItem("access_token")) {
+                showError("Oturum açılmamış. Yönlendiriliyorsunuz...");
+                setTimeout(() => window.location.href = "Login.html", 2000);
+                return;
+            }
+            
+            fetchData();
+            
+            // Sidebar functions
+            window.openSidebar = function() {
+                document.getElementById('sidebar').style.width = '250px';
+            };
+            
+            window.closeSidebar = function() {
+                document.getElementById('sidebar').style.width = '0';
+            };
+        });
+</script>
+
+<style>
+    /* Table Styles */
+    .comparison-table {
+        width: 100%;
+        margin-top: 1rem;
+        overflow-x: auto;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    
+    .comparison-table table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+    
+    .comparison-table th {
+        background-color: #2c3e50;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+        font-weight: 600;
+    }
+    
+    .comparison-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .comparison-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .comparison-table tr:hover {
+        background-color: #f5f7fa;
+    }
+    
+    /* Color for increase/decrease */
+    .increase {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+    
+    .decrease {
+        color: #2ecc71;
+        font-weight: bold;
+    }
+    
+    /* Remove chart container styles */
+    .chart-container, .prediction-chart {
+        display: none;
+    }
+    
+    /* Adjust prediction summary to full width */
+    .prediction-container {
+        display: block;
+    }
+    
+    .prediction-summary {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .prediction-card {
+        flex: 1;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Error and loading styles */
+    .error-message {
+        background-color: #ffebee;
+        color: #c62828;
+        padding: 1rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid #c62828;
+    }
+    
+    .loading-text, .error-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .spin {
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    /* Recommendation cards */
+    .recommendation-card {
+        display: flex;
+        gap: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .recommendation-card span {
+        font-size: 2rem;
+        color: #3498db;
+    }
+    
+    .recommendation-content h4 {
+        margin: 0 0 0.5rem 0;
+        color: #2c3e50;
+    }
+    
+    .recommendation-content p {
+        margin: 0;
+        color: #7f8c8d;
+    }
+    
+    .prediction-amount {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #3498db;
+        margin: 0.5rem 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .comparison-table {
+            font-size: 14px;
+        }
+        
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 8px 10px;
+        }
+        
+        .prediction-summary {
+            flex-direction: column;
+        }
+    }
+</style>
 </body>
+
 </html>

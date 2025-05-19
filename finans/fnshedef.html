@@ -163,7 +163,7 @@
         
         // 🟢 Giriş yapan kullanıcıyı getir
         async function fetchCurrentUser() {
-            const res = await fetch("http://localhost:8001/financial-goals/me", {
+            const res = await fetch("http://localhost:8000/financial-goals/me", {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (!res.ok) {
@@ -177,7 +177,7 @@
         
         // 🟡 Hedefleri getir
         async function fetchGoals() {
-            const res = await fetch("http://localhost:8001/financial-goals/", {
+            const res = await fetch("http://localhost:8000/financial-goals/", {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (!res.ok) {
@@ -259,8 +259,8 @@
         
             const isUpdate = form.dataset.goalId;
             const url = isUpdate
-                ? `http://localhost:8001/financial-goals/${isUpdate}`
-                : "http://localhost:8001/financial-goals/";
+                ? `http://localhost:8000/financial-goals/${isUpdate}`
+                : "http://localhost:8000/financial-goals/";
             const method = isUpdate ? "PUT" : "POST";
         
             const bodyData = {
@@ -294,7 +294,7 @@
         
         // 🔴 Silme Fonksiyonu
         async function deleteGoal(id) {
-            const res = await fetch(`http://localhost:8001/financial-goals/${id}`, {
+            const res = await fetch(`http://localhost:8000/financial-goals/${id}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` }
             });

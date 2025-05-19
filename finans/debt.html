@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchUser() {
         try {
-            const res = await fetch('http://127.0.0.1:8001/debts/me', {
+            const res = await fetch('http://127.0.0.1:8000/debts/me', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     async function fetchDebts() {
-        const res = await fetch('http://127.0.0.1:8001/debts/', {
+        const res = await fetch('http://127.0.0.1:8000/debts/', {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         const debts = await res.json();
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function deleteDebt(id) {
-        await fetch(`http://127.0.0.1:8001/debts/${id}`, {
+        await fetch(`http://127.0.0.1:8000/debts/${id}`, {
             method: 'DELETE',
             headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -222,8 +222,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const method = updateId ? 'PUT' : 'POST';
         const url = updateId 
-            ? `http://127.0.0.1:8001/debts/${updateId}` 
-            : 'http://127.0.0.1:8001/debts/';
+            ? `http://127.0.0.1:8000/debts/${updateId}` 
+            : 'http://127.0.0.1:8000/debts/';
 
         try {
             const response = await fetch(url, {

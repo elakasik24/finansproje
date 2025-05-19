@@ -197,7 +197,7 @@
             const fetchData = async (ay) => {
                 try {
                     const token = localStorage.getItem('access_token');
-                    const response = await fetch(`http://localhost:8001/dashboard/summary?ay=${ay}`, {
+                    const response = await fetch(`http://localhost:8000/dashboard/summary?ay=${ay}`, {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -250,7 +250,7 @@
         const fetchData = async (yil) => {
             try {
                 const token = localStorage.getItem('access_token');
-                const response = await fetch(`http://localhost:8001/dashboard/yearly_summary?yil=${yil}`, {
+                const response = await fetch(`http://localhost:8000/dashboard/yearly_summary?yil=${yil}`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -305,7 +305,7 @@
         let categoryChartInstance = null;
 
         function fetchCategoryDataByMonth(ay) {
-            fetch(`http://localhost:8001/dashboard/category-expense?ay=${ay}`, {
+            fetch(`http://localhost:8000/dashboard/category-expense?ay=${ay}`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("access_token")}`
                 }
@@ -384,7 +384,7 @@
     let dailyIncomeExpenseChartInstance = null;
 
     function fetchDailyIncomeExpenseData(ay) {
-        fetch(`http://localhost:8001/dashboard/daily-income-expense?ay=${ay}`, {
+        fetch(`http://localhost:8000/dashboard/daily-income-expense?ay=${ay}`, {
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("access_token")}`
             }
@@ -492,7 +492,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let debtDistributionChartInstance = null;
 
     function fetchDebtDistributionData(ay) {
-        fetch(`http://localhost:8001/dashboard/debt-distribution?ay=${ay}`, {
+        fetch(`http://localhost:8000/dashboard/debt-distribution?ay=${ay}`, {
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("access_token")}`
             }
@@ -583,7 +583,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let budgetCategoryChartInstance = null;
 
     function fetchBudgetCategoryDataByMonth(ay) {
-        fetch(`http://localhost:8001/dashboard/budget-category-distribution?ay=${ay}`, {
+        fetch(`http://localhost:8000/dashboard/budget-category-distribution?ay=${ay}`, {
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("access_token")}`
             }
@@ -687,7 +687,7 @@ document.addEventListener("DOMContentLoaded", function () {
         notificationList.innerHTML = "";
 
         try {
-            const response = await fetch(`http://localhost:8001/debts/unpaid/${month}`, {
+            const response = await fetch(`http://localhost:8000/debts/unpaid/${month}`, {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`,
