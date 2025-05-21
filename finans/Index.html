@@ -1,184 +1,191 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
-     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
+
 <body>
     <div class="grid-container">
-    <header class="header">
-    <div class="menu-icon" onclick="openSidebar()">
-        <span class="material-symbols-outlined">menu</span>
-    </div><span ></span>
-    <div class="header-left">
-    <div class="header-right">
-        <button class="notper-button">
-            <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
-        </button>
-    </div>
-</header>
-<div class="notification-box" id="notificationBox">
-    <h4>Bildirimler</h4>
-    <ul id="notificationList">
-        <!-- Ödenmemiş borçlar buraya gelecek -->
-    </ul>
-</div>
-   <aside id="sidebar">
-   <div class="sidebar-title">
-      <div class="sidebar-brand">
-        <span class="material-symbols-outlined">finance</span>
-         <span>CepFinans</span>
-      </div>
-      <span class="material-symbols-outlined" onclick="closeSidebar()" >cancel</span>
-   </div>
-   <ul class="sidebar-list">
-    <li class="sidebar-list-item">
-        
-       <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
-    </li>
-    <li class="sidebar-list-item"><a href="islemler.html"><span class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
-    <li class="sidebar-list-item"><a href="giderler.html"><span class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
-    <li class="sidebar-list-item">
-        <a href="budget.html">
-        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="debt.html">
-        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
-        </a>
-       </li>
-       <li class="sidebar-list-item">
-        <a href="abone.html">
-        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="fnshedef.html">
-        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="ai.html">
-        <span class="material-symbols-outlined">robot_2</span>AI
-    </a>
-    </li>
-    <li class="sidebar-list-item   cizgi">
-        <a href="settings.html">
-        <span class="material-symbols-outlined">settings</span>Ayarlar
-    </a>
-    </li>
-    <li class="sidebar-list-item">
-        <a href="Login.html">
-            <span class="material-symbols-outlined">logout</span>Çıkış
-    </a>
-    </li>
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-symbols-outlined">menu</span>
+            </div><span></span>
+            <div class="header-left">
+                <div class="header-right">
+                    <button class="notper-button">
+                        <span class="material-symbols-outlined" onclick="toggleNotifications()"> notifications</span>
+                    </button>
+                </div>
+        </header>
+        <div class="notification-box" id="notificationBox">
+            <h4>Bildirimler</h4>
+            <ul id="notificationList">
+                <!-- Ödenmemiş borçlar buraya gelecek -->
+            </ul>
+        </div>
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-symbols-outlined">finance</span>
+                    <span>CepFinans</span>
+                </div>
+                <span class="material-symbols-outlined" onclick="closeSidebar()">cancel</span>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
 
-   </ul>
-</aside>
-    <main class="main-container">
-        <div class="main-dateinput">
-            <label >Yıl</label>
-            <input class="date-input2" type="number" value="2025" min="2000" max="3000">
-        </div>        
-        <div class="main-cards">
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">YILLIK BÜTÇE</p>
-                    <span class="material-symbols-outlined">currency_lira</span>
-                </div>
-                <span class="text-primary font-weight-bold" id="total_budget2">249</span>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">YILLIK GELİR</p>
-                    <span class="material-symbols-outlined">universal_currency_alt</span>
-                </div>
-                <span class="text-primary font-weight-bold" id="total_income2">29</span>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">YILLIK GİDER</p>
-                    <span class="material-symbols-outlined">payments</span>
-                </div>
-                <span class="text-primary font-weight-bold" id="total_expense2">24</span>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">YILLIK BORÇLAR</p>
-                    <span class="material-symbols-outlined text-red">report</span>
-                </div>
-                <span class="text-primary font-weight-bold" id="total_debt2">49</span>
-            </div>
-            
-        </div>
+                    <span class="material-symbols-outlined text-decoration-none">dashboard</span>Dashboard
+                </li>
+                <li class="sidebar-list-item"><a href="islemler.html"><span
+                            class="material-symbols-outlined">payments</span>Gelir İşlemler</a></li>
+                <li class="sidebar-list-item"><a href="giderler.html"><span
+                            class="material-symbols-outlined">payments</span>Gider İşlemler</a></li>
+                <li class="sidebar-list-item">
+                    <a href="budget.html">
+                        <span class="material-symbols-outlined">bookmarks</span>Bütçe Yönetimi
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="debt.html">
+                        <span class="material-symbols-outlined">send_money</span>Borç Yönetimi
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="abone.html">
+                        <span class="material-symbols-outlined">loyalty</span>Abonelik Yönetimi
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="fnshedef.html">
+                        <span class="material-symbols-outlined">label_important</span>Finansal Hedefler
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="ai.html">
+                        <span class="material-symbols-outlined">robot_2</span>AI
+                    </a>
+                </li>
+                <li class="sidebar-list-item   cizgi">
+                    <a href="settings.html">
+                        <span class="material-symbols-outlined">settings</span>Ayarlar
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="Login.html">
+                        <span class="material-symbols-outlined">logout</span>Çıkış
+                    </a>
+                </li>
 
-        <div class="main-title">
-            <p class="font-weight-bold"></p>
-        </div>
-        <div class="main-dateinput">
-            <label >Tarih</label>
-             <input class="date-input" type="month" value="2025-05">
-        </div>
-        <div class="main-cards">
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">AYLIK BÜTÇE</p>
-                    <span class="material-symbols-outlined">currency_lira</span>
+            </ul>
+        </aside>
+        <main class="main-container">
+            <div class="main-dateinput">
+                <label>Yıl</label>
+                <input class="date-input2" type="number" value="2025" min="2000" max="3000">
+            </div>
+            <div class="main-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">YILLIK BÜTÇE</p>
+                        <span class="material-symbols-outlined">currency_lira</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_budget2">249</span>
                 </div>
-                <span class="text-primary font-weight-bold" id="total_budget">249</span>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">AYLIK GELİR</p>
-                    <span class="material-symbols-outlined">universal_currency_alt</span>
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">YILLIK GELİR</p>
+                        <span class="material-symbols-outlined">universal_currency_alt</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_income2">29</span>
                 </div>
-                <span class="text-primary font-weight-bold" id="total_income">29</span>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">AYLIK GİDER</p>
-                    <span class="material-symbols-outlined">payments</span>
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">YILLIK GİDER</p>
+                        <span class="material-symbols-outlined">payments</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_expense2">24</span>
                 </div>
-                <span class="text-primary font-weight-bold" id="total_expense">24</span>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <p class="text-primary">AYLIK BORÇLAR</p>
-                    <span class="material-symbols-outlined text-red">report</span>
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">YILLIK BORÇLAR</p>
+                        <span class="material-symbols-outlined text-red">report</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_debt2">49</span>
                 </div>
-                <span class="text-primary font-weight-bold" id="total_debt">49</span>
-            </div>
-            
-        </div>
-        <div class="charts">
-            <div class="charts-card">
-                <p class="chart-title">Kategorik Bazlı Harcama</p>
-                <canvas id="categoryChart"></canvas>
-            </div>
-            <div class="charts-card">
-                <p class="chart-title">Gelir & Gider Dağılımı</p>
-                <canvas id="dailyIncomeExpenseChart"></canvas>
-            </div>            
-            <div class="charts-card" style="display: flex; justify-content: center; align-items: center; height: 400px; flex-direction: column;">
-                <p class="chart-title">Borç Dağılımı</p>
-                <canvas id="debtDistributionChart" style="max-width: 350px; max-height: 350px;"></canvas>
-            </div>
-            
 
-            <div class="charts-card">
-                <p class="chart-title">Bütçe Dağılımı</p>
-                <canvas id="budgetCategoryChart"></canvas> <!-- Canvas öğesi eklendi -->
-            </div>            
-        </div>
-    </main>
+            </div>
+
+            <div class="main-title">
+                <p class="font-weight-bold"></p>
+            </div>
+            <div class="main-dateinput">
+                <label>Tarih</label>
+                <input class="date-input" type="month" value="2025-05">
+            </div>
+            <div class="main-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">AYLIK BÜTÇE</p>
+                        <span class="material-symbols-outlined">currency_lira</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_budget">249</span>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">AYLIK GELİR</p>
+                        <span class="material-symbols-outlined">universal_currency_alt</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_income">29</span>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">AYLIK GİDER</p>
+                        <span class="material-symbols-outlined">payments</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_expense">24</span>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">AYLIK BORÇLAR</p>
+                        <span class="material-symbols-outlined text-red">report</span>
+                    </div>
+                    <span class="text-primary font-weight-bold" id="total_debt">49</span>
+                </div>
+
+            </div>
+            <div class="charts">
+                <div class="charts-card">
+                    <p class="chart-title">Kategorik Bazlı Harcama</p>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+                <div class="charts-card">
+                    <p class="chart-title">Gelir & Gider Dağılımı</p>
+                    <canvas id="dailyIncomeExpenseChart"></canvas>
+                </div>
+                <div class="charts-card"
+                    style="display: flex; justify-content: center; align-items: center; height: 400px; flex-direction: column;">
+                    <p class="chart-title">Borç Dağılımı</p>
+                    <canvas id="debtDistributionChart" style="max-width: 350px; max-height: 350px;"></canvas>
+                </div>
+
+
+                <div class="charts-card">
+                    <p class="chart-title">Bütçe Dağılımı</p>
+                    <canvas id="budgetCategoryChart"></canvas> <!-- Canvas öğesi eklendi -->
+                </div>
+            </div>
+        </main>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.5.0/apexcharts.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -193,7 +200,7 @@
             } else {
                 console.error("Tarih input alanı bulunamadı");
             }
-    
+
             const fetchData = async (ay) => {
                 try {
                     const token = localStorage.getItem('access_token');
@@ -203,15 +210,15 @@
                             'Authorization': `Bearer ${token}`
                         }
                     });
-    
+
                     if (response.ok) {
                         const data = await response.json();
                         console.log(data);
-    
-                        document.querySelector("#total_income").innerText = data.total_income;
-                        document.querySelector("#total_expense").innerText = data.total_expense;
-                        document.querySelector("#total_budget").innerText = data.total_budget;
-                        document.querySelector("#total_debt").innerText = data.total_debt;
+
+                        document.querySelector("#total_income").innerText = Math.round(data.total_income);
+                        document.querySelector("#total_expense").innerText = Math.round(data.total_expense);
+                        document.querySelector("#total_budget").innerText = Math.round(data.total_budget);
+                        document.querySelector("#total_debt").innerText = Math.round(data.total_debt);
                     } else {
                         throw new Error('API çağrısı başarısız');
                     }
@@ -220,7 +227,7 @@
                     alert("API çağrısı sırasında bir hata oluştu.");
                 }
             };
-    
+
             // Tarih değiştiğinde tekrar veri çek
             if (dateInput) {
                 dateInput.addEventListener("change", function () {
@@ -229,7 +236,7 @@
                         fetchData(selectedDate);
                     }
                 });
-    
+
                 // Sayfa açıldığında otomatik veri çek
                 if (dateInput.value) {
                     fetchData(dateInput.value);
@@ -238,506 +245,507 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-        const dateInput = document.querySelector(".date-input2");
-        if (dateInput) {
-            const currentDate = new Date();
-            const formattedYear = currentDate.getFullYear();  // Yıl bilgisi
-            dateInput.value = formattedYear;  // Yıl input alanına yıl bilgisi yerleştirildi
-        } else {
-            console.error("Tarih input alanı bulunamadı");
-        }
+            const dateInput = document.querySelector(".date-input2");
+            if (dateInput) {
+                const currentDate = new Date();
+                const formattedYear = currentDate.getFullYear();  // Yıl bilgisi
+                dateInput.value = formattedYear;  // Yıl input alanına yıl bilgisi yerleştirildi
+            } else {
+                console.error("Tarih input alanı bulunamadı");
+            }
 
-        const fetchData = async (yil) => {
-            try {
-                const token = localStorage.getItem('access_token');
-                const response = await fetch(`http://localhost:8000/dashboard/yearly_summary?yil=${yil}`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`
+            const fetchData = async (yil) => {
+                try {
+                    const token = localStorage.getItem('access_token');
+                    const response = await fetch(`http://localhost:8000/dashboard/yearly_summary?yil=${yil}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log(data);
+
+                        document.querySelector("#total_income2").innerText =Math.round( data.total_income);
+                        document.querySelector("#total_expense2").innerText = Math.round(data.total_expense);
+                        document.querySelector("#total_budget2").innerText = Math.round(data.total_budget);
+                        document.querySelector("#total_debt2").innerText = Math.round(data.total_debt);
+                    } else {
+                        throw new Error('API çağrısı başarısız');
+                    }
+                } catch (error) {
+                    console.error("API çağrısı sırasında bir hata oluştu: " + error.message);
+                    alert("API çağrısı sırasında bir hata oluştu.");
+                }
+            };
+
+            // Yıl değiştiğinde tekrar veri çek
+            if (dateInput) {
+                dateInput.addEventListener("change", function () {
+                    const selectedYear = dateInput.value;
+                    if (selectedYear) {
+                        fetchData(selectedYear);  // Yıl bilgisi ile API'yi çağır
                     }
                 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log(data);
-
-                    document.querySelector("#total_income2").innerText = data.total_income;
-                    document.querySelector("#total_expense2").innerText = data.total_expense;
-                    document.querySelector("#total_budget2").innerText = data.total_budget;
-                    document.querySelector("#total_debt2").innerText = data.total_debt;
-                } else {
-                    throw new Error('API çağrısı başarısız');
+                // Sayfa açıldığında otomatik veri çek
+                if (dateInput.value) {
+                    fetchData(dateInput.value);  // Sayfa yüklendiğinde veri çek
                 }
-            } catch (error) {
-                console.error("API çağrısı sırasında bir hata oluştu: " + error.message);
-                alert("API çağrısı sırasında bir hata oluştu.");
             }
-        };
-
-        // Yıl değiştiğinde tekrar veri çek
-        if (dateInput) {
-            dateInput.addEventListener("change", function () {
-                const selectedYear = dateInput.value;
-                if (selectedYear) {
-                    fetchData(selectedYear);  // Yıl bilgisi ile API'yi çağır
-                }
-            });
-
-            // Sayfa açıldığında otomatik veri çek
-            if (dateInput.value) {
-                fetchData(dateInput.value);  // Sayfa yüklendiğinde veri çek
-            }
-        }
-    });
+        });
 
 
         document.addEventListener("DOMContentLoaded", function () {
-        const dateInput = document.querySelector(".date-input");
+            const dateInput = document.querySelector(".date-input");
 
-        // Sayfa yüklendiğinde mevcut ayı seçili yap
-        if (dateInput) {
-            const currentDate = new Date();
-            const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0');
-            dateInput.value = formattedDate;
-        }
-
-        // Grafik nesnesini globalde tut (eskiyi yok etmek için)
-        let categoryChartInstance = null;
-
-        function fetchCategoryDataByMonth(ay) {
-            fetch(`http://localhost:8000/dashboard/category-expense?ay=${ay}`, {
-                headers: {
-                    "Authorization": `Bearer ${localStorage.getItem("access_token")}`
-                }
-            })
-            .then(response => {
-                if (!response.ok) throw new Error("API yanıtı başarısız");
-                return response.json();
-            })
-            .then(data => {
-                const kategoriler = data.veriler.map(item => item.kategori);
-                const miktarlar = data.veriler.map(item => item.miktar);
-                renderCategoryChart(kategoriler, miktarlar);
-            })
-            .catch(error => {
-                console.error("Kategori harcama verileri alınamadı:", error);
-            });
-        }
-
-        function renderCategoryChart(labels, data) {
-            const ctx = document.getElementById("categoryChart").getContext("2d");
-
-            // Eski grafik varsa yok et
-            if (categoryChartInstance) {
-                categoryChartInstance.destroy();
+            // Sayfa yüklendiğinde mevcut ayı seçili yap
+            if (dateInput) {
+                const currentDate = new Date();
+                const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                dateInput.value = formattedDate;
             }
 
-            categoryChartInstance = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: "Harcamalar (₺)",
-                        data: data,
-                        backgroundColor: "#4da6ff"
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { beginAtZero: true }
+            // Grafik nesnesini globalde tut (eskiyi yok etmek için)
+            let categoryChartInstance = null;
+
+            function fetchCategoryDataByMonth(ay) {
+                fetch(`http://localhost:8000/dashboard/category-expense?ay=${ay}`, {
+                    headers: {
+                        "Authorization": `Bearer ${localStorage.getItem("access_token")}`
                     }
-                }
-            });
-        }
-
-        // Sayfa açıldığında veri çek
-        if (dateInput && dateInput.value) {
-            fetchCategoryDataByMonth(dateInput.value);
-        }
-
-        // Tarih değiştiğinde tekrar veri çek
-        if (dateInput) {
-            dateInput.addEventListener("change", function () {
-                const selectedDate = dateInput.value;
-                if (selectedDate) {
-                    fetchCategoryDataByMonth(selectedDate);
-                }
-            });
-        }
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.querySelector(".date-input");
-
-    // Sayfa yüklendiğinde mevcut ayı seçili yap
-    if (dateInput) {
-        const currentDate = new Date();
-        const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0');
-        dateInput.value = formattedDate;
-    }
-
-    // Grafik nesnesini globalde tut (eskiyi yok etmek için)
-    let dailyIncomeExpenseChartInstance = null;
-
-    function fetchDailyIncomeExpenseData(ay) {
-        fetch(`http://localhost:8000/dashboard/daily-income-expense?ay=${ay}`, {
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("access_token")}`
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("API yanıtı başarısız");
+                        return response.json();
+                    })
+                    .then(data => {
+                        const kategoriler = data.veriler.map(item => item.kategori);
+                        const miktarlar = data.veriler.map(item => item.miktar);
+                        renderCategoryChart(kategoriler, miktarlar);
+                    })
+                    .catch(error => {
+                        console.error("Kategori harcama verileri alınamadı:", error);
+                    });
             }
-        })
-        .then(response => {
-            if (!response.ok) throw new Error("API yanıtı başarısız");
-            return response.json();
-        })
-        .then(data => {
-            const dates = Array.from({ length: new Date(ay.split('-')[0], ay.split('-')[1], 0).getDate() }, (_, i) => {
-                const day = i + 1;
-                return `${ay}-${String(day).padStart(2, '0')}`;
-            });
 
-            renderIncomeExpenseChart(dates, data.income, data.expense);
-        })
-        .catch(error => {
-            console.error("Gelir ve gider verileri alınamadı:", error);
-        });
-    }
+            function renderCategoryChart(labels, data) {
+                const ctx = document.getElementById("categoryChart").getContext("2d");
 
-    function renderIncomeExpenseChart(labels, incomeData, expenseData) {
-        const ctx = document.getElementById("dailyIncomeExpenseChart").getContext("2d");
+                // Eski grafik varsa yok et
+                if (categoryChartInstance) {
+                    categoryChartInstance.destroy();
+                }
 
-        // Eski grafik varsa yok et
-        if (dailyIncomeExpenseChartInstance) {
-            dailyIncomeExpenseChartInstance.destroy(); // Burada eski grafik doğru şekilde temizleniyor
-        }
-
-        dailyIncomeExpenseChartInstance = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: labels,
-                datasets: [
-                    {
-                        label: "Gelir (₺)",
-                        data: incomeData,
-                        borderColor: "#4da6ff",
-                        backgroundColor: "rgba(77, 166, 255, 0.2)",
-                        fill: true,
+                categoryChartInstance = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "Harcamalar (₺)",
+                            data: data,
+                            backgroundColor: "#4da6ff"
+                        }]
                     },
-                    {
-                        label: "Gider (₺)",
-                        data: expenseData,
-                        borderColor: "#ff4d4d",
-                        backgroundColor: "rgba(255, 77, 77, 0.2)",
-                        fill: true,
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: "top"
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: "Tarih"
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: "Miktar (₺)"
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { beginAtZero: true }
                         }
                     }
+                });
+            }
+
+            // Sayfa açıldığında veri çek
+            if (dateInput && dateInput.value) {
+                fetchCategoryDataByMonth(dateInput.value);
+            }
+
+            // Tarih değiştiğinde tekrar veri çek
+            if (dateInput) {
+                dateInput.addEventListener("change", function () {
+                    const selectedDate = dateInput.value;
+                    if (selectedDate) {
+                        fetchCategoryDataByMonth(selectedDate);
+                    }
+                });
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateInput = document.querySelector(".date-input");
+
+            // Sayfa yüklendiğinde mevcut ayı seçili yap
+            if (dateInput) {
+                const currentDate = new Date();
+                const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                dateInput.value = formattedDate;
+            }
+
+            // Grafik nesnesini globalde tut (eskiyi yok etmek için)
+            let dailyIncomeExpenseChartInstance = null;
+
+            function fetchDailyIncomeExpenseData(ay) {
+                fetch(`http://localhost:8000/dashboard/daily-income-expense?ay=${ay}`, {
+                    headers: {
+                        "Authorization": `Bearer ${localStorage.getItem("access_token")}`
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("API yanıtı başarısız");
+                        return response.json();
+                    })
+                    .then(data => {
+                        const dates = Array.from({ length: new Date(ay.split('-')[0], ay.split('-')[1], 0).getDate() }, (_, i) => {
+                            const day = i + 1;
+                            return `${ay}-${String(day).padStart(2, '0')}`;
+                        });
+
+                        renderIncomeExpenseChart(dates, data.income, data.expense);
+                    })
+                    .catch(error => {
+                        console.error("Gelir ve gider verileri alınamadı:", error);
+                    });
+            }
+
+            function renderIncomeExpenseChart(labels, incomeData, expenseData) {
+                const ctx = document.getElementById("dailyIncomeExpenseChart").getContext("2d");
+
+                // Eski grafik varsa yok et
+                if (dailyIncomeExpenseChartInstance) {
+                    dailyIncomeExpenseChartInstance.destroy(); // Burada eski grafik doğru şekilde temizleniyor
                 }
-            }
-        });
-    }
 
-    // Sayfa açıldığında veri çek
-    if (dateInput && dateInput.value) {
-        fetchDailyIncomeExpenseData(dateInput.value);
-    }
-
-    // Tarih değiştiğinde tekrar veri çek
-    if (dateInput) {
-        dateInput.addEventListener("change", function () {
-            const selectedDate = dateInput.value;
-            if (selectedDate) {
-                fetchDailyIncomeExpenseData(selectedDate);
-            }
-        });
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.querySelector(".date-input");
-
-    // Sayfa yüklendiğinde mevcut ayı seçili yap
-    if (dateInput) {
-        const currentDate = new Date();
-        const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0');
-        dateInput.value = formattedDate;
-    }
-
-    let debtDistributionChartInstance = null;
-
-    function fetchDebtDistributionData(ay) {
-        fetch(`http://localhost:8000/dashboard/debt-distribution?ay=${ay}`, {
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("access_token")}`
-            }
-        })
-        .then(response => {
-            if (!response.ok) throw new Error("API yanıtı başarısız");
-            return response.json();
-        })
-        .then(data => {
-            const labels = data.veriler.map(item => item.tur);
-            const dataValues = data.veriler.map(item => item.miktar);
-
-            renderDebtDistributionChart(labels, dataValues);
-        })
-        .catch(error => {
-            console.error("Borç dağılımı verileri alınamadı:", error);
-        });
-    }
-
-    function renderDebtDistributionChart(labels, data) {
-        const ctx = document.getElementById("debtDistributionChart").getContext("2d");
-
-        // Eski grafik varsa yok et
-        if (debtDistributionChartInstance) {
-            debtDistributionChartInstance.destroy();
-        }
-
-        debtDistributionChartInstance = new Chart(ctx, {
-            type: "doughnut",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Borç Dağılımı",
-                    data: data,
-                    backgroundColor: [
-                        "#ff4d4d", "#4da6ff", "#ffcc00", "#99ff99", "#ff66b2", "#66b3ff", "#cc99ff"
-                    ],
-                    borderColor: "rgba(0, 0, 0, 0.5)",
-                    borderWidth: 3
-                }]
-            },
-            options: {
-                responsive: true,
-                cutout: "55%",
-                plugins: {
-                    legend: {
-                        position: "right",
-                        labels: {
-                            usePointStyle: true,
-                            pointStyle: 'circle',
-                            padding: 20
-                        }
+                dailyIncomeExpenseChartInstance = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "Gelir (₺)",
+                                data: incomeData,
+                                borderColor: "#4da6ff",
+                                backgroundColor: "rgba(77, 166, 255, 0.2)",
+                                fill: true,
+                            },
+                            {
+                                label: "Gider (₺)",
+                                data: expenseData,
+                                borderColor: "#ff4d4d",
+                                backgroundColor: "rgba(255, 77, 77, 0.2)",
+                                fill: true,
+                            }
+                        ]
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function (tooltipItem) {
-                                const label = tooltipItem.label || '';
-                                const value = tooltipItem.raw || 0;
-                                const percentage = tooltipItem.raw / data.reduce((a, b) => a + b, 0) * 100;
-                                return `${label}: ₺${value} (${percentage.toFixed(1)}%)`;
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: "top"
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: "Tarih"
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: "Miktar (₺)"
+                                }
                             }
                         }
                     }
-                }
-            }
-        });
-    }
-
-    // Sayfa açıldığında veri çek
-    if (dateInput && dateInput.value) {
-        fetchDebtDistributionData(dateInput.value);
-    }
-
-    // Tarih değişince grafik güncelle
-    if (dateInput) {
-        dateInput.addEventListener("change", function () {
-            const selectedDate = dateInput.value;
-            if (selectedDate) {
-                fetchDebtDistributionData(selectedDate);
-            }
-        });
-    }
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.querySelector(".date-input");
-    let budgetCategoryChartInstance = null;
-
-    function fetchBudgetCategoryDataByMonth(ay) {
-        fetch(`http://localhost:8000/dashboard/budget-category-distribution?ay=${ay}`, {
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("access_token")}`
-            }
-        })
-        .then(response => {
-            if (!response.ok) throw new Error("API yanıtı başarısız");
-            return response.json();
-        })
-        .then(data => {
-            const categories = data.veriler.map(item => item.kategori);
-            const amounts = data.veriler.map(item => item.miktar);
-            renderBudgetCategoryChart(categories, amounts);
-        })
-        .catch(error => {
-            console.error("Bütçe kategorisi verileri alınamadı:", error);
-        });
-    }
-
-    function renderBudgetCategoryChart(labels, data) {
-        const ctx = document.getElementById("budgetCategoryChart").getContext("2d");
-
-        // Eski grafik varsa yok et
-        if (budgetCategoryChartInstance) {
-            budgetCategoryChartInstance.destroy();
-        }
-
-        const colors = [
-            "#ff6b6b", "#4da6ff", "#66ff66", "#ffcc00", "#ff9966", "#ff3399", "#33ccff", 
-            "#66cc66", "#ff6600", "#cc66ff", "#ff9900", "#6699ff"
-        ];
-
-        // Yeni grafiği render et
-        budgetCategoryChartInstance = new Chart(ctx, {
-            type: "bar",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Bütçe Miktarı (₺)",
-                    data: data,
-                    backgroundColor: colors.slice(0, data.length), // Veriye göre renkleri seç
-                    borderColor: "#ffffff",  // Kenarlık rengini beyaz yap
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Kategori'
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Miktar (₺)'
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    // Sayfa açıldığında veri çek
-    if (dateInput && dateInput.value) {
-        fetchBudgetCategoryDataByMonth(dateInput.value);
-    }
-
-    // Tarih değiştiğinde tekrar veri çek
-    if (dateInput) {
-        dateInput.addEventListener("change", function () {
-            const selectedDate = dateInput.value;
-            if (selectedDate) {
-                fetchBudgetCategoryDataByMonth(selectedDate);
-            }
-        });
-    }
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.querySelector(".date-input"); // Tarih inputu
-    const notificationList = document.getElementById("notificationList"); // Bildirim listesi
-
-    // Ödenmemiş borçları API'den al
-    async function fetchUnpaidDebts(month) {
-        const token = localStorage.getItem("access_token"); // Token'ı yerel depolamadan al
-
-        if (!token) {
-            alert("Kullanıcı doğrulaması yapılmadı!");
-            return;
-        }
-
-        // Önceki bildirimleri temizle
-        notificationList.innerHTML = "";
-
-        try {
-            const response = await fetch(`http://localhost:8000/debts/unpaid/${month}`, {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error("Ödenmemiş borçlar alınamadı");
-            }
-
-            const data = await response.json();
-
-            // Borçların listesini kontrol et
-            if (data.length === 0) {
-                const noDebtsItem = document.createElement("li");
-                noDebtsItem.textContent = "Seçilen tarihte ödenmemiş borç yok.";
-                notificationList.appendChild(noDebtsItem);
-            } else {
-                data.forEach(debt => {
-                    const notificationItem = document.createElement("li");
-                    notificationItem.textContent = `${debt.creditor} - ${debt.amount} TL, Vade: ${new Date(debt.due_date).toLocaleDateString()}`;
-                    notificationList.appendChild(notificationItem);
                 });
             }
-        } catch (error) {
-            console.error("API Hatası:", error);
-            const errorItem = document.createElement("li");
-            errorItem.textContent = "Bildirim Yok";
-            notificationList.appendChild(errorItem);
-        }
-    }
 
-    // Sayfa ilk yüklendiğinde tarih inputu varsa veriyi çek
-    if (dateInput && dateInput.value) {
-        fetchUnpaidDebts(dateInput.value);
-    }
+            // Sayfa açıldığında veri çek
+            if (dateInput && dateInput.value) {
+                fetchDailyIncomeExpenseData(dateInput.value);
+            }
 
-    // Tarih değişince veriyi tekrar çek
-    if (dateInput) {
-        dateInput.addEventListener("change", function () {
-            const selectedDate = dateInput.value;
-            if (selectedDate) {
-                fetchUnpaidDebts(selectedDate);
-            } else {
-                notificationList.innerHTML = ""; // Tarih silindiyse listeyi temizle
+            // Tarih değiştiğinde tekrar veri çek
+            if (dateInput) {
+                dateInput.addEventListener("change", function () {
+                    const selectedDate = dateInput.value;
+                    if (selectedDate) {
+                        fetchDailyIncomeExpenseData(selectedDate);
+                    }
+                });
             }
         });
-    }
-});
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateInput = document.querySelector(".date-input");
+
+            // Sayfa yüklendiğinde mevcut ayı seçili yap
+            if (dateInput) {
+                const currentDate = new Date();
+                const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0');
+                dateInput.value = formattedDate;
+            }
+
+            let debtDistributionChartInstance = null;
+
+            function fetchDebtDistributionData(ay) {
+                fetch(`http://localhost:8000/dashboard/debt-distribution?ay=${ay}`, {
+                    headers: {
+                        "Authorization": `Bearer ${localStorage.getItem("access_token")}`
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("API yanıtı başarısız");
+                        return response.json();
+                    })
+                    .then(data => {
+                        const labels = data.veriler.map(item => item.tur);
+                        const dataValues = data.veriler.map(item => item.miktar);
+
+                        renderDebtDistributionChart(labels, dataValues);
+                    })
+                    .catch(error => {
+                        console.error("Borç dağılımı verileri alınamadı:", error);
+                    });
+            }
+
+            function renderDebtDistributionChart(labels, data) {
+                const ctx = document.getElementById("debtDistributionChart").getContext("2d");
+
+                // Eski grafik varsa yok et
+                if (debtDistributionChartInstance) {
+                    debtDistributionChartInstance.destroy();
+                }
+
+                debtDistributionChartInstance = new Chart(ctx, {
+                    type: "doughnut",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "Borç Dağılımı",
+                            data: data,
+                            backgroundColor: [
+                                "#ff4d4d", "#4da6ff", "#ffcc00", "#99ff99", "#ff66b2", "#66b3ff", "#cc99ff"
+                            ],
+                            borderColor: "rgba(0, 0, 0, 0.5)",
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        cutout: "55%",
+                        plugins: {
+                            legend: {
+                                position: "right",
+                                labels: {
+                                    usePointStyle: true,
+                                    pointStyle: 'circle',
+                                    padding: 20
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (tooltipItem) {
+                                        const label = tooltipItem.label || '';
+                                        const value = tooltipItem.raw || 0;
+                                        const percentage = tooltipItem.raw / data.reduce((a, b) => a + b, 0) * 100;
+                                        return `${label}: ₺${value} (${percentage.toFixed(1)}%)`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Sayfa açıldığında veri çek
+            if (dateInput && dateInput.value) {
+                fetchDebtDistributionData(dateInput.value);
+            }
+
+            // Tarih değişince grafik güncelle
+            if (dateInput) {
+                dateInput.addEventListener("change", function () {
+                    const selectedDate = dateInput.value;
+                    if (selectedDate) {
+                        fetchDebtDistributionData(selectedDate);
+                    }
+                });
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateInput = document.querySelector(".date-input");
+            let budgetCategoryChartInstance = null;
+
+            function fetchBudgetCategoryDataByMonth(ay) {
+                fetch(`http://localhost:8000/dashboard/budget-category-distribution?ay=${ay}`, {
+                    headers: {
+                        "Authorization": `Bearer ${localStorage.getItem("access_token")}`
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("API yanıtı başarısız");
+                        return response.json();
+                    })
+                    .then(data => {
+                        const categories = data.veriler.map(item => item.kategori);
+                        const amounts = data.veriler.map(item => item.miktar);
+                        renderBudgetCategoryChart(categories, amounts);
+                    })
+                    .catch(error => {
+                        console.error("Bütçe kategorisi verileri alınamadı:", error);
+                    });
+            }
+
+            function renderBudgetCategoryChart(labels, data) {
+                const ctx = document.getElementById("budgetCategoryChart").getContext("2d");
+
+                // Eski grafik varsa yok et
+                if (budgetCategoryChartInstance) {
+                    budgetCategoryChartInstance.destroy();
+                }
+
+                const colors = [
+                    "#ff6b6b", "#4da6ff", "#66ff66", "#ffcc00", "#ff9966", "#ff3399", "#33ccff",
+                    "#66cc66", "#ff6600", "#cc66ff", "#ff9900", "#6699ff"
+                ];
+
+                // Yeni grafiği render et
+                budgetCategoryChartInstance = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "Bütçe Miktarı (₺)",
+                            data: data,
+                            backgroundColor: colors.slice(0, data.length), // Veriye göre renkleri seç
+                            borderColor: "#ffffff",  // Kenarlık rengini beyaz yap
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Kategori'
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Miktar (₺)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Sayfa açıldığında veri çek
+            if (dateInput && dateInput.value) {
+                fetchBudgetCategoryDataByMonth(dateInput.value);
+            }
+
+            // Tarih değiştiğinde tekrar veri çek
+            if (dateInput) {
+                dateInput.addEventListener("change", function () {
+                    const selectedDate = dateInput.value;
+                    if (selectedDate) {
+                        fetchBudgetCategoryDataByMonth(selectedDate);
+                    }
+                });
+            }
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateInput = document.querySelector(".date-input"); // Tarih inputu
+            const notificationList = document.getElementById("notificationList"); // Bildirim listesi
+
+            // Ödenmemiş borçları API'den al
+            async function fetchUnpaidDebts(month) {
+                const token = localStorage.getItem("access_token"); // Token'ı yerel depolamadan al
+
+                if (!token) {
+                    alert("Kullanıcı doğrulaması yapılmadı!");
+                    return;
+                }
+
+                // Önceki bildirimleri temizle
+                notificationList.innerHTML = "";
+
+                try {
+                    const response = await fetch(`http://localhost:8000/debts/unpaid/${month}`, {
+                        method: "GET",
+                        headers: {
+                            "Authorization": `Bearer ${token}`,
+                        },
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Ödenmemiş borçlar alınamadı");
+                    }
+
+                    const data = await response.json();
+
+                    // Borçların listesini kontrol et
+                    if (data.length === 0) {
+                        const noDebtsItem = document.createElement("li");
+                        noDebtsItem.textContent = "Seçilen tarihte ödenmemiş borç yok.";
+                        notificationList.appendChild(noDebtsItem);
+                    } else {
+                        data.forEach(debt => {
+                            const notificationItem = document.createElement("li");
+                            notificationItem.textContent = `${debt.creditor} - ${debt.amount} TL, Vade: ${new Date(debt.due_date).toLocaleDateString()}`;
+                            notificationList.appendChild(notificationItem);
+                        });
+                    }
+                } catch (error) {
+                    console.error("API Hatası:", error);
+                    const errorItem = document.createElement("li");
+                    errorItem.textContent = "Bildirim Yok";
+                    notificationList.appendChild(errorItem);
+                }
+            }
+
+            // Sayfa ilk yüklendiğinde tarih inputu varsa veriyi çek
+            if (dateInput && dateInput.value) {
+                fetchUnpaidDebts(dateInput.value);
+            }
+
+            // Tarih değişince veriyi tekrar çek
+            if (dateInput) {
+                dateInput.addEventListener("change", function () {
+                    const selectedDate = dateInput.value;
+                    if (selectedDate) {
+                        fetchUnpaidDebts(selectedDate);
+                    } else {
+                        notificationList.innerHTML = ""; // Tarih silindiyse listeyi temizle
+                    }
+                });
+            }
+        });
 
     </script>
 </body>
+
 </html>
